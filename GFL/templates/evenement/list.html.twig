@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<a href="{{ path ('add_event') }}">Add event</a>
+<h5>List event</h5>
+{% for event in tabEvent %}
+    <tr>
+    <td>{{ event.nom }}</td>
+    <td>{{ event.lieu }}</td>
+        <td>{{ event.date|date('d-m-Y') }}</td>
+
+        <td>{{ event.datefin|date('d-m-Y') }}</td>
+    <td>{{ event.description }}</td>
+
+        <td><td> <img class="-google-plus-circle" src="{{ asset('uploads/images/') ~ event.image }}"alt="" width="192" height="140" >  </td>
+
+
+    </tr>
+    <a href="{{ path('update_Event', {'id': event.id}) }}"  class="btn btn-dark">Update</a>
+    <a href="{{ path('remove_Event', {'id': event.id}) }}">Delete</a>
+    <br>
+
+
+{% endfor %}
+{% endblock %}
