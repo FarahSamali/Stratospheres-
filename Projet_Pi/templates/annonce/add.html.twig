@@ -1,0 +1,69 @@
+{% extends 'base.html.twig'  %}
+{% block body %}
+
+<div style="display:flex; align-items:center;justify-content: center ; margin-top: 135px; margin-bottom: 100px" >
+    <div class="row mt-5 justify-content-center" data-aos="fade-up">
+        <div class="col-lg-10">
+            {{ form_start(f)}}
+
+            <div class="row">
+
+                    <div class="col-md-6 form-group" style="margin-bottom: 11px"  >
+                        {{ form_label(f.nom, null, {'label': 'Nom:'}) }}
+                        {{ form_widget(f.nom,{'attr':{'class':'form-control'}}) }}
+
+                    </div>
+
+                    <div class="col-md-6 form-group mt-3 mt-md-0" >
+                        {{ form_label(f.tel, null, {'label': 'Télephone:'}) }}
+                        {{ form_widget(f.tel,{'attr':{'class':'form-control'}}) }}
+                    </div>
+            </div>
+                <div class="form-group mt-3">
+                    {{ form_label(f.local, null, {'label': 'Localisation:'}) }}
+                    {{ form_widget(f.local,{'attr':{'class':'form-control'}}) }}
+                </div>
+                <div class="form-group mt-3">
+                    {{ form_label(f.email, null, {'label': 'Email:'}) }}
+                    {{ form_widget(f.email,{'attr':{'class':'form-control'}}) }}
+                </div>
+                <div class="form-group mt-3" style="margin-bottom: 11px">
+                    {{ form_label(f.titre, null, {'label': 'Titre:'}) }}
+                    {{ form_widget(f.titre,{'attr':{'class':'form-control'}}) }}
+                </div>
+                <div class="row">
+                <div class="col-md-6 form-group" style="margin-bottom: 11px">
+                    {{ form_label(f.categorie, null, {'label': 'Catégorie:'}) }}
+                    {{ form_widget(f.categorie,{'attr':{'class':'form-control'}}) }}
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                    {{ form_label(f.etat, null, {'label': 'Etat:'}) }}
+                    {{ form_widget(f.etat,{'attr':{'class':'form-control'}}) }}
+                </div>
+
+                </div>
+                <div class="form-group mt-3" style="margin-bottom: 11px">
+                    {{ form_label(f.descreption, null, {'label': 'Descreption:'}) }}
+                    {{ form_widget(f.descreption,{'attr':{'class':'form-control'}}) }}
+                </div>
+                <div class="col-md-6 form-group" style="margin-bottom: 11px">
+                    {{ form_label(f.image, null, {'label': 'Image:'}) }}
+                    {{ form_widget(f.image,{'attr':{'class':'form-control'}}) }}
+                </div>
+                <div class="col-md-6 form-group" style="margin-bottom: 11px">
+                    {{ form_label(f.tag, null, {'label': 'Tags:'}) }}
+                    {{ form_widget(f.tag,{'attr':{'class':'form-control'}}) }}
+                </div>
+              <!--  <div class="text-center" ><button type="submit">Send Message</button></div>-->
+            {{ form_end (f) }}
+        </div>
+
+    </div>
+
+</div>
+
+
+{% endblock  %}
+
+
+
