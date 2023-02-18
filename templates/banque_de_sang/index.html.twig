@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Banque{% endblock %}
+
+{% block body %}
+    <p class="fs-1">La liste des banques de sang en Tunisie</p>
+    <h1></h1>
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Adresse</th>
+                <th>Tel</th>
+
+            </tr>
+        </thead>
+        <tbody>
+        {% for banque_de_sang in banque_de_sangs %}
+
+            <tr>
+                <td>{{ banque_de_sang.nom }}</td>
+                <td>{{ banque_de_sang.adresse }}</td>
+                <td>{{ banque_de_sang.tel }}</td>
+                <td>
+                    <a href="{{ path('app_banque_de_sang_show', {'id': banque_de_sang.id}) }}"><button type="button" class="btn btn-primary">Show</button></a>
+                    <a href="{{ path('app_banque_de_sang_edit', {'id': banque_de_sang.id}) }}"><button type="button" class="btn btn-info">Edit</button></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">Aucune des banques de sang ajouté</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ path('app_banque_de_sang_new') }}"><button type="button" class="btn btn-success">Create</button></a>
+
+{% endblock %}

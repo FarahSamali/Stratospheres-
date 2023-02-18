@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit BanqueDeSang{% endblock %}
+
+{% block body %}
+    <h1>Modifier les Informations sur les banques des sangs</h1>
+
+    {{ include('banque_de_sang/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_banque_de_sang_index') }}"><button class="btn">back to list</button></a>
+
+    {{ include('banque_de_sang/_delete_form.html.twig') }}
+{% endblock %}
