@@ -5,27 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="814186a2-f1d2-4336-a334-c339c1cbba49" name="Changes" comment="First push">
-      <change afterPath="$PROJECT_DIR$/src/Controller/NotifyAlertController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/NotifyAlertType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/notify_alert/_delete_form.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/notify_alert/_form.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/notify_alert/edit.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/notify_alert/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/notify_alert/new.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/notify_alert/show.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Controller/NotifyAlertControllerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/banque_de_sang/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/banque_de_sang/_delete_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/banque_de_sang/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/banque_de_sang/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/banque_de_sang/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/banque_de_sang/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/banque_de_sang/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/banque_de_sang/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/banque_de_sang/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/banque_de_sang/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/banque_de_sang/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/banque_de_sang/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/banque_de_sang/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/banque_de_sang/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,6 +202,7 @@
       <workItem from="1676757711404" duration="910000" />
       <workItem from="1676824682755" duration="3391000" />
       <workItem from="1676979903803" duration="611000" />
+      <workItem from="1676980594970" duration="1229000" />
     </task>
     <servers />
   </component>
