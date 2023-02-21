@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}NotifyAlert index{% endblock %}
+
+{% block body %}
+    <h1>NotifyAlert index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Message</th>
+                <th>Recipient</th>
+                <th>Sender</th>
+                <th>Timestamp</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for notify_alert in notify_alerts %}
+            <tr>
+                <td>{{ notify_alert.id }}</td>
+                <td>{{ notify_alert.title }}</td>
+                <td>{{ notify_alert.message }}</td>
+                <td>{{ notify_alert.recipient }}</td>
+                <td>{{ notify_alert.sender }}</td>
+                <td>{{ notify_alert.timestamp }}</td>
+                <td>
+                    <a href="{{ path('app_notify_alert_show', {'id': notify_alert.id}) }}">show</a>
+                    <a href="{{ path('app_notify_alert_edit', {'id': notify_alert.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_notify_alert_new') }}">Create new</a>
+{% endblock %}

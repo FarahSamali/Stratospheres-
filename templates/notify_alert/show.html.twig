@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}NotifyAlert{% endblock %}
+
+{% block body %}
+    <h1>NotifyAlert</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ notify_alert.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ notify_alert.title }}</td>
+            </tr>
+            <tr>
+                <th>Message</th>
+                <td>{{ notify_alert.message }}</td>
+            </tr>
+            <tr>
+                <th>Recipient</th>
+                <td>{{ notify_alert.recipient }}</td>
+            </tr>
+            <tr>
+                <th>Sender</th>
+                <td>{{ notify_alert.sender }}</td>
+            </tr>
+            <tr>
+                <th>Timestamp</th>
+                <td>{{ notify_alert.timestamp }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_notify_alert_index') }}">back to list</a>
+
+    <a href="{{ path('app_notify_alert_edit', {'id': notify_alert.id}) }}">edit</a>
+
+    {{ include('notify_alert/_delete_form.html.twig') }}
+{% endblock %}

@@ -3,9 +3,9 @@
 {% block title %}New BanqueDeSang{% endblock %}
 
 {% block body %}
-    <h1>Create new BanqueDeSang</h1>
+    <p class="fs-1">Ajouter un nouveau banque de sang</p>
 
     {{ include('banque_de_sang/_form.html.twig') }}
 
-    <a href="{{ path('app_banque_de_sang_index') }}">back to list</a>
+    <a href="{{ path('app_banque_de_sang_index') }}"><button type="button" class="btn btn-primary">Back to list</button></a>
 {% endblock %}
