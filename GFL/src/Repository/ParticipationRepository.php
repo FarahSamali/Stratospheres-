@@ -38,6 +38,15 @@ class ParticipationRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
+    public function getParticipationByEvenement($id)  {
+        $qb= $this->createQueryBuilder('participation')
+            ->join('participation.evenement','event')
+            ->addSelect('event')
+            ->where('event.id=:id')
+            ->setParameter('id',$id);
+        return $qb->getQuery()
+            ->getResult();
+    }
 
 //    /**
 //     * @return Participation[] Returns an array of Participation objects

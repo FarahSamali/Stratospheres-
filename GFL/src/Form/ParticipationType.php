@@ -3,35 +3,36 @@
 namespace App\Form;
 
 use App\Entity\Evenement;
+use App\Entity\Participation;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class EvenementType extends AbstractType
+class ParticipationType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
             ->add('nom')
-            ->add('lieu')
-            ->add('date')
-            ->add('Description',TextareaType::class)
-            ->add('datefin')
-           ->add('image', FileType::class, array('data_class' => null))
-
-
-
+            ->add('prenom')
+            ->add('adresse')
+            ->add('email')
+            ->add('numero')
+            ->add('evenement',
+                EntityType::class,array(
+                    'class'=>Evenement::class,
+                    'choice_label'=>'nom'
+                ))
+            ->add("Participer",SubmitType::class)
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Evenement::class,
+            'data_class' => Participation::class,
         ]);
     }
 }

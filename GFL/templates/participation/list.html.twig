@@ -1,0 +1,49 @@
+{% extends 'back.html.twig' %}
+{% block body %}
+<h5>Liste des participations</h5>
+<div align="center"><a href="/listEvent"  class="btn btn-dark " style="margin-top: 100px">Back</a></div>
+    <div class="table-responsive  table--no-card m-b-30">
+        <table class="table table-borderless table-striped table-earning">
+
+
+<div align="center",style="margin-top: 100px" class="card-body">
+
+        <thead>
+        <tr>
+            <th>Nom </th>
+            <th>Prenom </th>
+            <th>Adresse </th>
+            <th>Numero</th>
+            <th>Email</th>
+            <th>Evenement_id</th>
+
+        </tr>
+        </thead>
+        <tbody>
+
+    {% for participation in tabPartic %}
+        <tr>
+            <td>Nom: {{ participation.nom }}</td>
+            <td>Prenom: {{ participation.prenom }}</td>
+            <td>Adresse: {{ participation.adresse }}</td>
+            <td>Numero :{{ participation.numero }}</td>
+            <td>Email: {{ participation.email }}</td>
+            <td>Evenement_id: {{ participation.evenement.id }}</td>
+            <td><a href="{{ path('remove_Partic', {'id': participation.id}) }}" class="btn btn-dark">Delete</a></td>
+
+        </tr>
+        <br>
+
+
+    {% endfor %}
+        </tbody>
+    </div>
+
+
+        </table>
+    </div>
+
+</div>
+
+
+{% endblock %}
