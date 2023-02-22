@@ -85,54 +85,55 @@ class __TwigTemplate_26ac0887efe5cb6ec8c050b741cd17c2 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <p class=\"fs-1\">La liste des banques de sang en Tunisie</p>
+        echo "<div class=\"container\">
+    <p class=\"fs-1\">La liste des banques de sang en Tunisie</p>
     <table class=\"table table-striped table-hover\">
         <thead>
-            <tr>
-                <th>Nom</th>
-                <th>Adresse</th>
-                <th>Tel</th>
+        <tr>
+            <th>Nom</th>
+            <th>Adresse</th>
+            <th>Tel</th>
 
-            </tr>
+        </tr>
         </thead>
         <tbody>
         ";
-        // line 17
+        // line 18
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["banque_de_sangs"]) || array_key_exists("banque_de_sangs", $context) ? $context["banque_de_sangs"] : (function () { throw new RuntimeError('Variable "banque_de_sangs" does not exist.', 17, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["banque_de_sangs"]) || array_key_exists("banque_de_sangs", $context) ? $context["banque_de_sangs"] : (function () { throw new RuntimeError('Variable "banque_de_sangs" does not exist.', 18, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["banque_de_sang"]) {
-            // line 18
+            // line 19
             echo "
             <tr>
                 <td>";
-            // line 20
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["banque_de_sang"], "nom", [], "any", false, false, false, 20), "html", null, true);
-            echo "</td>
-                <td>";
             // line 21
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["banque_de_sang"], "adresse", [], "any", false, false, false, 21), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["banque_de_sang"], "nom", [], "any", false, false, false, 21), "html", null, true);
             echo "</td>
                 <td>";
             // line 22
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["banque_de_sang"], "tel", [], "any", false, false, false, 22), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["banque_de_sang"], "adresse", [], "any", false, false, false, 22), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 23
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["banque_de_sang"], "tel", [], "any", false, false, false, 23), "html", null, true);
             echo "</td>
                 <td>
                     <a href=\"";
-            // line 24
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_banque_de_sang_show", ["id" => twig_get_attribute($this->env, $this->source, $context["banque_de_sang"], "id", [], "any", false, false, false, 24)]), "html", null, true);
-            echo "\"><button type=\"button\" class=\"btn btn-primary\">Show</button></a>
-                    <a href=\"";
             // line 25
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_banque_de_sang_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["banque_de_sang"], "id", [], "any", false, false, false, 25)]), "html", null, true);
-            echo "\"><button type=\"button\" class=\"btn btn-info\">Edit</button></a>
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_banque_de_sang_show", ["id" => twig_get_attribute($this->env, $this->source, $context["banque_de_sang"], "id", [], "any", false, false, false, 25)]), "html", null, true);
+            echo "\"><button type=\"button\" class=\"btn btn-dark\">Show</button></a>
+                    <a href=\"";
+            // line 26
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_banque_de_sang_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["banque_de_sang"], "id", [], "any", false, false, false, 26)]), "html", null, true);
+            echo "\"><button type=\"button\" class=\"btn btn-dark\">Edit</button></a>
                 </td>
             </tr>
         ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 29
+            // line 30
             echo "            <tr>
                 <td colspan=\"5\">Aucune des banques de sang ajouté</td>
             </tr>
@@ -141,14 +142,15 @@ class __TwigTemplate_26ac0887efe5cb6ec8c050b741cd17c2 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['banque_de_sang'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 33
+        // line 34
         echo "        </tbody>
     </table>
     <a href=\"";
-        // line 35
+        // line 36
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_banque_de_sang_new");
         echo "\"><button type=\"button\" class=\"btn btn-success\">Create</button></a>
 
+</div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -170,7 +172,7 @@ class __TwigTemplate_26ac0887efe5cb6ec8c050b741cd17c2 extends Template
 
     public function getDebugInfo()
     {
-        return array (  149 => 35,  145 => 33,  136 => 29,  127 => 25,  123 => 24,  118 => 22,  114 => 21,  110 => 20,  106 => 18,  101 => 17,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  150 => 36,  146 => 34,  137 => 30,  128 => 26,  124 => 25,  119 => 23,  115 => 22,  111 => 21,  107 => 19,  102 => 18,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -180,15 +182,16 @@ class __TwigTemplate_26ac0887efe5cb6ec8c050b741cd17c2 extends Template
 {% block title %}Banque{% endblock %}
 
 {% block body %}
+<div class=\"container\">
     <p class=\"fs-1\">La liste des banques de sang en Tunisie</p>
     <table class=\"table table-striped table-hover\">
         <thead>
-            <tr>
-                <th>Nom</th>
-                <th>Adresse</th>
-                <th>Tel</th>
+        <tr>
+            <th>Nom</th>
+            <th>Adresse</th>
+            <th>Tel</th>
 
-            </tr>
+        </tr>
         </thead>
         <tbody>
         {% for banque_de_sang in banque_de_sangs %}
@@ -198,8 +201,8 @@ class __TwigTemplate_26ac0887efe5cb6ec8c050b741cd17c2 extends Template
                 <td>{{ banque_de_sang.adresse }}</td>
                 <td>{{ banque_de_sang.tel }}</td>
                 <td>
-                    <a href=\"{{ path('app_banque_de_sang_show', {'id': banque_de_sang.id}) }}\"><button type=\"button\" class=\"btn btn-primary\">Show</button></a>
-                    <a href=\"{{ path('app_banque_de_sang_edit', {'id': banque_de_sang.id}) }}\"><button type=\"button\" class=\"btn btn-info\">Edit</button></a>
+                    <a href=\"{{ path('app_banque_de_sang_show', {'id': banque_de_sang.id}) }}\"><button type=\"button\" class=\"btn btn-dark\">Show</button></a>
+                    <a href=\"{{ path('app_banque_de_sang_edit', {'id': banque_de_sang.id}) }}\"><button type=\"button\" class=\"btn btn-dark\">Edit</button></a>
                 </td>
             </tr>
         {% else %}
@@ -211,6 +214,7 @@ class __TwigTemplate_26ac0887efe5cb6ec8c050b741cd17c2 extends Template
     </table>
     <a href=\"{{ path('app_banque_de_sang_new') }}\"><button type=\"button\" class=\"btn btn-success\">Create</button></a>
 
+</div>
 {% endblock %}
 ", "banque_de_sang/index.html.twig", "C:\\Users\\Fahd\\pidev\\templates\\banque_de_sang\\index.html.twig");
     }

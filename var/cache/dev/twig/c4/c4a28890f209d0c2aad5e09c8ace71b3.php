@@ -65,7 +65,7 @@ class __TwigTemplate_2d208ba58581a02ef4b238a770c2cabc extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "BanqueDeSang";
+        echo "Afficher banque de sang";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -163,7 +163,7 @@ class __TwigTemplate_2d208ba58581a02ef4b238a770c2cabc extends Template
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}BanqueDeSang{% endblock %}
+{% block title %}Afficher banque de sang{% endblock %}
 
 {% block body %}
     <p class=\"fs-1\">Informations sur un banque de sang</p>

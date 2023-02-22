@@ -16,6 +16,6 @@ if (!\class_exists(App_KernelDevDebugContainer::class, false)) {
 
 return new \ContainerXiOLuIE\App_KernelDevDebugContainer([
     'container.build_hash' => 'XiOLuIE',
-    'container.build_id' => '7929cf9e',
-    'container.build_time' => 1676826886,
+    'container.build_id' => '30d6e221',
+    'container.build_time' => 1677008307,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerXiOLuIE');
