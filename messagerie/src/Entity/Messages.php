@@ -5,7 +5,6 @@ namespace App\Entity;
 use App\Repository\MessagesRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 #[ORM\Entity(repositoryClass: MessagesRepository::class)]
 class Messages
@@ -29,14 +28,15 @@ class Messages
 
     #[ORM\ManyToOne(inversedBy: 'sent')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Utilisateur $sender = null;
+    private ?Users $sender = null;
 
     #[ORM\ManyToOne(inversedBy: 'received')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Utilisateur $recipient = null;
+    private ?Users $recipient = null;
+
     public function __construct()
     {
-        $this->created_at = new \DateTimeImmutable();
+        $this->created_at=new \DateTimeImmutable();
     }
 
     public function getId(): ?int
@@ -92,24 +92,24 @@ class Messages
         return $this;
     }
 
-    public function getSender(): ?Utilisateur
+    public function getSender(): ?Users
     {
         return $this->sender;
     }
 
-    public function setSender(?Utilisateur $sender): self
+    public function setSender(?Users $sender): self
     {
         $this->sender = $sender;
 
         return $this;
     }
 
-    public function getRecipient(): ?Utilisateur
+    public function getRecipient(): ?Users
     {
         return $this->recipient;
     }
 
-    public function setRecipient(?Utilisateur $recipient): self
+    public function setRecipient(?Users $recipient): self
     {
         $this->recipient = $recipient;
 
