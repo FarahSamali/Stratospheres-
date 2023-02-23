@@ -1,12 +1,15 @@
 {% extends 'back.html.twig' %}
 {% block body %}
-<h5>Liste des participations</h5>
-<div align="center"><a href="/listEvent"  class="btn btn-dark " style="margin-top: 100px">Back</a></div>
-    <div class="table-responsive  table--no-card m-b-30">
-        <table class="table table-borderless table-striped table-earning">
+
+<div class="page-container">
+    <div class="main-content">
+        <div class="section__content section__content--p10">
+            <div class="container-fluid">
+                <div align="center" class="card-group">
+                    <div align="center",style="margin-top: 100px" ><h3>Liste des participations</h3></div>
 
 
-<div align="center",style="margin-top: 100px" class="card-body">
+                    <table class="table table-borderless table-striped table-earning">
 
         <thead>
         <tr>
@@ -30,20 +33,23 @@
             <td>Email: {{ participation.email }}</td>
             <td>Evenement_id: {{ participation.evenement.id }}</td>
             <td><a href="{{ path('remove_Partic', {'id': participation.id}) }}" class="btn btn-dark">Delete</a></td>
+            <td><a href="{{ path('update_Partic', {'id': participation.id}) }}"  class="btn btn-dark">Modifier</a></td>
 
         </tr>
-        <br>
+
 
 
     {% endfor %}
         </tbody>
+
+
+            </table>
+
+            </div>
+
+        </div>
     </div>
-
-
-        </table>
-    </div>
-
 </div>
-
+    </div>
 
 {% endblock %}

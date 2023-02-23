@@ -26,9 +26,8 @@ class Participation
     private ?string $adresse = null;
 
     #[ORM\Column(length: 255)]
-    #[Asssert\NotBlank(message:'Email is required')]
-    #[Assert\Email(strict:true,message:'the email {{value}} is not valid email.')]
-    #[Assert\Email(checkMX:true)]
+    #[Asssert\NotBlank(message:"Email is required")]
+    #[Assert\Email(message:"the email '{{value}}' is not valid email.")]
     private ?string $email = null;
 
     #[ORM\Column(length: 8)]

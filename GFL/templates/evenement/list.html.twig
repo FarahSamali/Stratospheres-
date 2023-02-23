@@ -3,15 +3,14 @@
     <div class="page-container">
     <div class="main-content">
     <div class="section__content section__content--p10">
-    <div class="container-fluid">
+    <table class="container-fluid">
     <div align="center" class="card-group">
-<div align="center"><a href="/addevent" class="btn btn-success" style="margin-top: 200px">Add event</a></div>
-<p><h3>Liste des evenements</h3></p>
-    <div align="center"><a href="/listPartic"  class="btn btn-success">Liste des Participations</a></div>
+<div align="center" ,style="margin-top: 100px"> <a href="/addevent" class="btn btn-success" style="margin-top: 200px">Add event</a></div>
+        <div align="center",style="margin-top: 100px" ><h3>Liste des evenements</h3></div>
 
 
- <table class="table table-borderless table-striped table-earning">>
-     <div align="center",style="margin-top: 100px" class="card-body">
+
+ <table class="table table-borderless table-striped table-earning">
     <thead>
     <tr>
         <th>Nom &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</th>
@@ -19,22 +18,19 @@
         <th>Date_debut &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</th>
         <th>Date_fin &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</th>
         <th>Description &nbsp&nbsp&nbsp&nbsp</th>
-        <th>Image  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</th>
-
-        <th>Action </th>
+        <th>Image &nbsp&nbsp&nbsp&nbsp</th>
+        <th>Action &nbsp&nbsp&nbsp&nbsp</th>
     </tr>
     </thead>
-    <tbody>
+
     {% for event in tabEvent %}
-        <tr>
+
             <td>{{ event.nom }}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
             <td>{{ event.lieu }}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
             <td>{{ event.date|date('d-m-Y') }}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
             <td>{{ event.datefin|date('d-m-Y') }}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-            <td>{{ event.description }}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-
-
-            <td> <img class="-google-plus-circle" src="{{ asset('uploads/images/') ~ event.image }}"alt="" width="192" height="140" >  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+             <td>{{ event.description }}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+           <td><img src="{{ asset('uploads/evenements/'~event.image) }}" style="margin-right: 5px ;margin-top :5px" alt="" width="100" height="100"/></td>
             <td><a href="{{ path('update_Event', {'id': event.id}) }}"  class="btn btn-dark">Modifier</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
             <td><a href="{{ path('remove_Event', {'id': event.id}) }}" class="btn btn-dark">Supprimer</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
 
@@ -48,6 +44,7 @@
     </tbody>
      </div>
 </table>
+
 
     </div>
     </div>

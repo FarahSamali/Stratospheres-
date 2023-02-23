@@ -44,8 +44,6 @@ class Evenement
     #[Assert\NotBlank( message:"Votre description ne doit pas etre vide")]
     private ?string $description = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $image = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     #[Assert\GreaterThan("today")]
@@ -54,6 +52,9 @@ class Evenement
 
     #[ORM\OneToMany(mappedBy: 'evenement', targetEntity: Participation::class)]
     private Collection $participations;
+
+    #[ORM\Column(length: 255)]
+    private ?string $image = null;
 
 
 
@@ -123,19 +124,6 @@ class Evenement
         return $this;
     }
 
-    public function getImage(): ?string
-    {
-        return $this->image;
-    }
-
-    public function setImage(string $image): self
-    {
-        $this->image = $image;
-
-        return $this;
-    }
-
-
     public function getDatefin(): ?\DateTimeInterface
     {
         return $this->datefin;
@@ -178,6 +166,18 @@ class Evenement
                 $participation->setEvenement(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): self
+    {
+        $this->image = $image;
 
         return $this;
     }

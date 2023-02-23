@@ -12,33 +12,51 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 
 class EvenementController extends AbstractController
 {
-    #[Route('/evenement', name: 'app_evenement')]
+    #[Route('/Admin', name: 'app_evenement')]
     public function index(): Response
     {
-        return $this->render('Admin/form.html.twig', [
+        return $this->render('back.html.twig', [
             'controller_name' => 'EvenementController',
         ]);
     }
 
     #[Route('/addevent', name: 'add_event')]
-    public function addevent(Request  $request,ManagerRegistry $doctrine)
+    public function addevent(Request  $request,ManagerRegistry $doctrine ,SluggerInterface $slugger)
     {
         $event= new Evenement();
         $form= $this->createForm(EvenementType::class,$event);
         $form->handleRequest($request) ;
         if($form->isSubmitted()&& $form->isValid()){
-          /*  $file=$event->getImage();
-            $filename = md5(uniqid()) . '.' . $file->guessExtension();
+            $photo = $form->get('photo')->getData();
 
-            $file->move(
-                $this->getParameter('photos_directory'),
-                $filename);
+            // this condition is needed because the 'brochure' field is not required
+            // so the PDF file must be processed only when a file is uploaded
+            if ($photo) {
+                $originalFilename = pathinfo($photo->getClientOriginalName(), PATHINFO_FILENAME);
+                // this is needed to safely include the file name as part of the URL
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename.'-'.uniqid().'.'.$photo->guessExtension();
 
-            $event->setImage($filename);*/
+                // Move the file to the directory where brochures are stored
+                try {
+                    $photo->move(
+                        $this->getParameter('event_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    // ... handle exception if something happens during file upload
+                }
+
+                // updates the 'brochureFilename' property to store the PDF file name
+                // instead of its contents
+                $event->setImage($newFilename);
+            }
+
             $em=$doctrine->getManager();
             $em->persist($event);
             $em->flush();
@@ -83,15 +101,7 @@ class EvenementController extends AbstractController
         }
         return $this->render("evenement/update.html.twig",['form'=> $form->createView()]);
     }
-   /* #[Route('/showParticipation/{id}', name: 'showParticipation')]
-    public function showParticipation(EvenementRepository $repo,$id,ParticipationRepository $repository)
-    {
-        $participation= $repository->find($id);
-        $event= $repo->getEvenementByParticipation($id);
-        return $this->render("evenement/list.html.twig",
-            array("participations"=>$participation,
-                "evenement"=>$event));
-    }*/
+
 
 
 }

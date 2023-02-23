@@ -27,7 +27,7 @@ class ParticipationController extends AbstractController
         $participation= new Participation();
         $form= $this->createForm(ParticipationType::class,$participation);
         $form->handleRequest($request) ;
-        if($form->isSubmitted()){
+        if($form->isSubmitted()&& $form->isValid()){
             $em=$doctrine->getManager();
             $em->persist($participation);
             $em->flush();
@@ -64,13 +64,5 @@ class ParticipationController extends AbstractController
         }
         return $this->renderForm("participation/update.html.twig",array("FormPartic"=>$form));
     }
-   /* #[Route('/showEvenement/{id}', name: 'showEvenement')]
-    public function showEvenement(ParticipationRepository $repo,$id,EvenementRepository $repository)
-    {
-        $evenement= $repository->find($id);
-        $participation= $repo->getParticipationByEvenement($id);
-        return $this->render("participation/list.html.twig",
-            array("evenement"=>$evenement,
-                "participations"=>$participation));
-    }*/
+
 }

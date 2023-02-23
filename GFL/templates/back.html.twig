@@ -72,7 +72,7 @@
             <div class="container-fluid">
                 <div class="header-mobile-inner">
                     <a class="logo" href="{{ asset ('admin/index.html') }}">
-                        <img src="{{ asset ('admin/images/icon/logo.png') }}" alt="CoolAdmin" />
+                        <img src="{{ asset ('admin/images/icon/logo.png') }}" />
                     </a>
                     <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -195,30 +195,16 @@
             <nav class="navbar-sidebar">
                 <ul class="list-unstyled navbar__list">
                     <li class="active has-sub">
-                        <a class="js-arrow" href="#">
+                        <a class="js-arrow" href="{{ asset ('admin/index.html') }}">
                             <i class="fas fa-tachometer-alt"></i>Dashboard</a>
-                        <ul class="list-unstyled navbar__sub-list js-sub-list">
-                            <li>
-                                <a href="{{ asset ('admin/index.html') }}">Dashboard 1</a>
-                            </li>
-                            <li>
-                                <a href="{{ asset ('admin/index2.html') }}">Dashboard 2</a>
-                            </li>
-                            <li>
-                                <a href="{{ asset ('admin/index3.html') }}">Dashboard 3</a>
-                            </li>
-                            <li>
-                                <a href="{{ asset ('admin/index4.html') }}">Dashboard 4</a>
-                            </li>
-                        </ul>
                     </li>
                     <li>
                         <a href="{{ asset ('admin/chart.html') }}">
                             <i class="fas fa-chart-bar"></i>Charts</a>
                     </li>
                     <li>
-                        <a href="{{ asset ('admin/table.html') }}">
-                            <i class="fas fa-table"></i>Tables</a>
+                        <a href="{{ asset ('/listPartic') }}">
+                            <i class="fas fa-table"></i>Participation</a>
                     </li>
                     <li>
                         <a href="{{ asset ('admin/form.html') }}">
