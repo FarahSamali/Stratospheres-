@@ -4,10 +4,17 @@
 
 return [
     'app_banque_de_sang_index' => [[], ['_controller' => 'App\\Controller\\BanqueDeSangController::index'], [], [['text', '/banquedesang/']], [], [], []],
+    'app_banque_de_sang_liste' => [[], ['_controller' => 'App\\Controller\\BanqueDeSangController::liste'], [], [['text', '/banquedesang/liste']], [], [], []],
     'app_banque_de_sang_new' => [[], ['_controller' => 'App\\Controller\\BanqueDeSangController::new'], [], [['text', '/banquedesang/new']], [], [], []],
     'app_banque_de_sang_show' => [['id'], ['_controller' => 'App\\Controller\\BanqueDeSangController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/banquedesang']], [], [], []],
     'app_banque_de_sang_edit' => [['id'], ['_controller' => 'App\\Controller\\BanqueDeSangController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/banquedesang']], [], [], []],
     'app_banque_de_sang_delete' => [['id'], ['_controller' => 'App\\Controller\\BanqueDeSangController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/banquedesang']], [], [], []],
+    'app_notifications_index' => [[], ['_controller' => 'App\\Controller\\NotificationsController::index'], [], [['text', '/notifications/']], [], [], []],
+    'app_notifications_user' => [[], ['_controller' => 'App\\Controller\\NotificationsController::user'], [], [['text', '/notifications/user']], [], [], []],
+    'app_notifications_new' => [[], ['_controller' => 'App\\Controller\\NotificationsController::new'], [], [['text', '/notifications/new']], [], [], []],
+    'app_notifications_show' => [['id'], ['_controller' => 'App\\Controller\\NotificationsController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/notifications']], [], [], []],
+    'app_notifications_edit' => [['id'], ['_controller' => 'App\\Controller\\NotificationsController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/notifications']], [], [], []],
+    'app_notifications_delete' => [['id'], ['_controller' => 'App\\Controller\\NotificationsController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/notifications']], [], [], []],
     'app_notify_alert_index' => [[], ['_controller' => 'App\\Controller\\NotifyAlertController::index'], [], [['text', '/notifyalert/']], [], [], []],
     'app_notify_alert_new' => [[], ['_controller' => 'App\\Controller\\NotifyAlertController::new'], [], [['text', '/notifyalert/new']], [], [], []],
     'app_notify_alert_show' => [['id'], ['_controller' => 'App\\Controller\\NotifyAlertController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/notifyalert']], [], [], []],

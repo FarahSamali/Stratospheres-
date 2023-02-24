@@ -85,7 +85,7 @@ class __TwigTemplate_494f1adfafb3434eb746686a2d052f2f extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Modifier les Informations sur les banques des sangs</h1>
+        echo "    <p class=\"fs-1\">Modifier les Informations sur les banques des sangs</p>
 
     ";
         // line 8
@@ -132,7 +132,7 @@ class __TwigTemplate_494f1adfafb3434eb746686a2d052f2f extends Template
 {% block title %}Edit BanqueDeSang{% endblock %}
 
 {% block body %}
-    <h1>Modifier les Informations sur les banques des sangs</h1>
+    <p class=\"fs-1\">Modifier les Informations sur les banques des sangs</p>
 
     {{ include('banque_de_sang/_form.html.twig', {'button_label': 'Update'}) }}
 

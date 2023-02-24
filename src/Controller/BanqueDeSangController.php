@@ -20,7 +20,13 @@ class BanqueDeSangController extends AbstractController
             'banque_de_sangs' => $banqueDeSangRepository->findAll(),
         ]);
     }
-
+    #[Route('/liste', name: 'app_banque_de_sang_liste', methods: ['GET'])]
+    public function liste(BanqueDeSangRepository $banqueDeSangRepository): Response
+    {
+        return $this->render('banque_de_sang/liste.html.twig', [
+            'banque_de_sangs' => $banqueDeSangRepository->findAll(),
+        ]);
+    }
     #[Route('/new', name: 'app_banque_de_sang_new', methods: ['GET', 'POST'])]
     public function new(Request $request, BanqueDeSangRepository $banqueDeSangRepository): Response
     {

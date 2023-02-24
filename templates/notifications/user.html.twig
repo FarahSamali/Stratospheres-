@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Notifications index{% endblock %}
+
+{% block body %}
+    <div style="text-align: center">
+        <h1>Notifications Alert</h1></div>
+    <div class="container">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Message</th>
+            <th>Recipient</th>
+            <th>Sender</th>
+            <th>Timestamp</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for notification in notifications %}
+            <tr>
+
+                <td>{{ notification.title }}</td>
+                <td>{{ notification.message }}</td>
+                <td>{{ notification.recipient }}</td>
+                <td>{{ notification.sender }}</td>
+                <td>{{ notification.timestamp ? notification.timestamp|date('Y-m-d') : '' }}</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+{% endblock %}

@@ -15,12 +15,15 @@ class BanqueDeSang
 
     #[ORM\Column(length: 255)]
     private ?string $nom = null;
+    #[Assert\NotBlank(message:"Nom is required")]
 
     #[ORM\Column(length: 255)]
     private ?string $adresse = null;
+    #[Assert\NotBlank(message:"adresse is required")]
 
     #[ORM\Column]
     private ?int $tel = null;
+    #[Assert\NotBlank(message:"Tel is required")]
 
     public function getId(): ?int
     {

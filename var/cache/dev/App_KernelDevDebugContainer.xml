@@ -336,6 +336,13 @@
         <argument type="service" id=".service_locator.mx0UMmY.App\Controller\BanqueDeSangController"/>
       </call>
     </service>
+    <service id="App\Controller\NotificationsController" class="App\Controller\NotificationsController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.mx0UMmY.App\Controller\NotificationsController"/>
+      </call>
+    </service>
     <service id="App\Controller\NotifyAlertController" class="App\Controller\NotifyAlertController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -346,10 +353,17 @@
     <service id="App\Form\BanqueDeSangType" class="App\Form\BanqueDeSangType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\NotificationsType" class="App\Form\NotificationsType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\NotifyAlertType" class="App\Form\NotifyAlertType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Repository\BanqueDeSangRepository" class="App\Repository\BanqueDeSangRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\NotificationsRepository" class="App\Repository\NotificationsRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -1135,6 +1149,7 @@
       </argument>
       <argument type="collection">
         <argument>App\Form\BanqueDeSangType</argument>
+        <argument>App\Form\NotificationsType</argument>
         <argument>App\Form\NotifyAlertType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
@@ -3280,7 +3295,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.uYbN4Ys"/>
+      <argument type="service" id=".service_locator.mZYsWcx"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -4162,7 +4177,7 @@
     <service id="doctrine.orm.configuration" class="Doctrine\ORM\Configuration" abstract="true"/>
     <service id="doctrine.orm.entity_manager.abstract" class="Doctrine\ORM\EntityManager" lazy="true" abstract="true"/>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.NhsyHsB"/>
+      <argument type="service" id=".service_locator.tSGwmqK"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -6118,15 +6133,22 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\BanqueDeSangController" class="App\Controller\BanqueDeSangController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\BanqueDeSangController" class="App\Controller\BanqueDeSangController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\BanqueDeSangController" class="App\Controller\BanqueDeSangController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\NotificationsController" class="App\Controller\NotificationsController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\NotificationsController" class="App\Controller\NotificationsController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\NotificationsController" class="App\Controller\NotificationsController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\NotifyAlertController" class="App\Controller\NotifyAlertController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\NotifyAlertController" class="App\Controller\NotifyAlertController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\NotifyAlertController" class="App\Controller\NotifyAlertController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\BanqueDeSangType" class="App\Form\BanqueDeSangType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\BanqueDeSangType" class="App\Form\BanqueDeSangType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\NotificationsType" class="App\Form\NotificationsType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\NotificationsType" class="App\Form\NotificationsType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\NotifyAlertType" class="App\Form\NotifyAlertType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\NotifyAlertType" class="App\Form\NotifyAlertType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\BanqueDeSangRepository" class="App\Repository\BanqueDeSangRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\BanqueDeSangRepository" class="App\Repository\BanqueDeSangRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\NotificationsRepository" class="App\Repository\NotificationsRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\NotificationsRepository" class="App\Repository\NotificationsRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\NotifyAlertRepository" class="App\Repository\NotifyAlertRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\NotifyAlertRepository" class="App\Repository\NotifyAlertRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".service_locator.gSv9zYw" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -6483,6 +6505,25 @@
         <argument key="banqueDeSangRepository" type="service_closure" id="App\Repository\BanqueDeSangRepository"/>
       </argument>
     </service>
+    <service id=".service_locator.io67PaP" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="notificationsRepository" type="service_closure" id="App\Repository\NotificationsRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.fHxPURc" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="notification" type="service_closure" id=".errored..service_locator.fHxPURc.App\Entity\Notifications"/>
+      </argument>
+    </service>
+    <service id=".service_locator.q6kcerQ" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="notification" type="service_closure" id=".errored..service_locator.q6kcerQ.App\Entity\Notifications"/>
+        <argument key="notificationsRepository" type="service_closure" id="App\Repository\NotificationsRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.j9Q40xJ" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -6502,14 +6543,21 @@
         <argument key="notifyAlertRepository" type="service_closure" id="App\Repository\NotifyAlertRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.iPRrt32" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.4Y6KzMG" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\BanqueDeSangController::delete" type="service_closure" id=".service_locator.SYi217l"/>
         <argument key="App\Controller\BanqueDeSangController::edit" type="service_closure" id=".service_locator.SYi217l"/>
         <argument key="App\Controller\BanqueDeSangController::index" type="service_closure" id=".service_locator.LkFPxtX"/>
+        <argument key="App\Controller\BanqueDeSangController::liste" type="service_closure" id=".service_locator.LkFPxtX"/>
         <argument key="App\Controller\BanqueDeSangController::new" type="service_closure" id=".service_locator.LkFPxtX"/>
         <argument key="App\Controller\BanqueDeSangController::show" type="service_closure" id=".service_locator.og211MZ"/>
+        <argument key="App\Controller\NotificationsController::delete" type="service_closure" id=".service_locator.q6kcerQ"/>
+        <argument key="App\Controller\NotificationsController::edit" type="service_closure" id=".service_locator.q6kcerQ"/>
+        <argument key="App\Controller\NotificationsController::index" type="service_closure" id=".service_locator.io67PaP"/>
+        <argument key="App\Controller\NotificationsController::new" type="service_closure" id=".service_locator.io67PaP"/>
+        <argument key="App\Controller\NotificationsController::show" type="service_closure" id=".service_locator.fHxPURc"/>
+        <argument key="App\Controller\NotificationsController::user" type="service_closure" id=".service_locator.io67PaP"/>
         <argument key="App\Controller\NotifyAlertController::delete" type="service_closure" id=".service_locator.qwH0tQa"/>
         <argument key="App\Controller\NotifyAlertController::edit" type="service_closure" id=".service_locator.qwH0tQa"/>
         <argument key="App\Controller\NotifyAlertController::index" type="service_closure" id=".service_locator.j9Q40xJ"/>
@@ -6522,8 +6570,15 @@
         <argument key="App\Controller\BanqueDeSangController:delete" type="service_closure" id=".service_locator.SYi217l"/>
         <argument key="App\Controller\BanqueDeSangController:edit" type="service_closure" id=".service_locator.SYi217l"/>
         <argument key="App\Controller\BanqueDeSangController:index" type="service_closure" id=".service_locator.LkFPxtX"/>
+        <argument key="App\Controller\BanqueDeSangController:liste" type="service_closure" id=".service_locator.LkFPxtX"/>
         <argument key="App\Controller\BanqueDeSangController:new" type="service_closure" id=".service_locator.LkFPxtX"/>
         <argument key="App\Controller\BanqueDeSangController:show" type="service_closure" id=".service_locator.og211MZ"/>
+        <argument key="App\Controller\NotificationsController:delete" type="service_closure" id=".service_locator.q6kcerQ"/>
+        <argument key="App\Controller\NotificationsController:edit" type="service_closure" id=".service_locator.q6kcerQ"/>
+        <argument key="App\Controller\NotificationsController:index" type="service_closure" id=".service_locator.io67PaP"/>
+        <argument key="App\Controller\NotificationsController:new" type="service_closure" id=".service_locator.io67PaP"/>
+        <argument key="App\Controller\NotificationsController:show" type="service_closure" id=".service_locator.fHxPURc"/>
+        <argument key="App\Controller\NotificationsController:user" type="service_closure" id=".service_locator.io67PaP"/>
         <argument key="App\Controller\NotifyAlertController:delete" type="service_closure" id=".service_locator.qwH0tQa"/>
         <argument key="App\Controller\NotifyAlertController:edit" type="service_closure" id=".service_locator.qwH0tQa"/>
         <argument key="App\Controller\NotifyAlertController:index" type="service_closure" id=".service_locator.j9Q40xJ"/>
@@ -6592,10 +6647,11 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.uYbN4Ys" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.mZYsWcx" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\BanqueDeSangType" type="service_closure" id="App\Form\BanqueDeSangType"/>
+        <argument key="App\Form\NotificationsType" type="service_closure" id="App\Form\NotificationsType"/>
         <argument key="App\Form\NotifyAlertType" type="service_closure" id="App\Form\NotifyAlertType"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service_closure" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service_closure" id="form.type.choice"/>
@@ -6682,10 +6738,11 @@
         <argument key="doctrine.orm.messenger.doctrine_schema_subscriber" type="service_closure" id="doctrine.orm.messenger.doctrine_schema_subscriber"/>
       </argument>
     </service>
-    <service id=".service_locator.NhsyHsB" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.tSGwmqK" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\BanqueDeSangRepository" type="service_closure" id="App\Repository\BanqueDeSangRepository"/>
+        <argument key="App\Repository\NotificationsRepository" type="service_closure" id="App\Repository\NotificationsRepository"/>
         <argument key="App\Repository\NotifyAlertRepository" type="service_closure" id="App\Repository\NotifyAlertRepository"/>
       </argument>
     </service>
@@ -6961,6 +7018,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.mx0UMmY" method="withContext"/>
     </service>
+    <service id=".service_locator.mx0UMmY.App\Controller\NotificationsController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\NotificationsController"/>
+      <argument>App\Controller\NotificationsController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.mx0UMmY" method="withContext"/>
+    </service>
     <service id=".service_locator.mx0UMmY.App\Controller\NotifyAlertController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\NotifyAlertController"/>
       <argument>App\Controller\NotifyAlertController</argument>
@@ -7149,12 +7212,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.iPRrt32"/>
+      <argument type="service" id=".service_locator.4Y6KzMG"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.iPRrt32"/>
+      <argument type="service" id=".service_locator.4Y6KzMG"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -7176,6 +7239,8 @@
     <service id=".errored..service_locator.xUrKPVU.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
     <service id=".errored..service_locator.og211MZ.App\Entity\BanqueDeSang" class="App\Entity\BanqueDeSang"/>
     <service id=".errored..service_locator.SYi217l.App\Entity\BanqueDeSang" class="App\Entity\BanqueDeSang"/>
+    <service id=".errored..service_locator.fHxPURc.App\Entity\Notifications" class="App\Entity\Notifications"/>
+    <service id=".errored..service_locator.q6kcerQ.App\Entity\Notifications" class="App\Entity\Notifications"/>
     <service id=".errored..service_locator.cdruamx.App\Entity\NotifyAlert" class="App\Entity\NotifyAlert"/>
     <service id=".errored..service_locator.qwH0tQa.App\Entity\NotifyAlert" class="App\Entity\NotifyAlert"/>
     <service id=".console.command.about.lazy" class="Symfony\Component\Console\Command\LazyCommand">
@@ -8123,7 +8188,7 @@
     <service id="sensio_framework_extra.security.expression_language" alias="sensio_framework_extra.security.expression_language.default"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.iPRrt32"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.4Y6KzMG"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -8147,9 +8212,9 @@
     <service id=".service_locator.80edgLI" alias="messenger.receiver_locator"/>
     <service id=".service_locator.h8Jkkd2" alias="messenger.retry_strategy_locator"/>
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
-    <service id=".service_locator.owA4oEY" alias=".service_locator.iPRrt32"/>
+    <service id=".service_locator.mjzahDo" alias=".service_locator.4Y6KzMG"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
-    <service id=".service_locator.iEoLKOr" alias=".service_locator.uYbN4Ys"/>
+    <service id=".service_locator.3NROtf0" alias=".service_locator.mZYsWcx"/>
     <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>
     <service id=".service_locator.O24_MAy" alias=".service_locator.yY.p4P7"/>
     <service id=".service_locator.0ghLsew" alias=".service_locator.mx0UMmY"/>
@@ -8178,6 +8243,9 @@
     <service id=".service_locator.uOmuGVP" alias=".service_locator.LkFPxtX"/>
     <service id=".service_locator.s21lvTj" alias=".service_locator.og211MZ"/>
     <service id=".service_locator.u_gfF8T" alias=".service_locator.SYi217l"/>
+    <service id=".service_locator.PErwkOc" alias=".service_locator.io67PaP"/>
+    <service id=".service_locator.J.2lILY" alias=".service_locator.fHxPURc"/>
+    <service id=".service_locator.a5fEbjP" alias=".service_locator.q6kcerQ"/>
     <service id=".service_locator.k7be.lI" alias=".service_locator.j9Q40xJ"/>
     <service id=".service_locator._XzI75d" alias=".service_locator.cdruamx"/>
     <service id=".service_locator.ebeNtT3" alias=".service_locator.qwH0tQa"/>

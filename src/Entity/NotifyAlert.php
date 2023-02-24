@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\NotifyAlertRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints\Date;
 
 #[ORM\Entity(repositoryClass: NotifyAlertRepository::class)]
 class NotifyAlert

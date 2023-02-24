@@ -86,7 +86,7 @@ class __TwigTemplate_2d208ba58581a02ef4b238a770c2cabc extends Template
 
         // line 6
         echo "    <p class=\"fs-1\">Informations sur un banque de sang</p>
-    <div class=\"ab\">
+    <div class=\"container\">
         <table class=\"table table-bordered border-primary\">
         <tbody>
             <tr>
@@ -119,7 +119,7 @@ class __TwigTemplate_2d208ba58581a02ef4b238a770c2cabc extends Template
             </tr>
         </tbody>
     </table>
-    </div>
+
 
     <a href=\"";
         // line 30
@@ -135,6 +135,7 @@ class __TwigTemplate_2d208ba58581a02ef4b238a770c2cabc extends Template
         // line 34
         echo twig_include($this->env, $context, "banque_de_sang/_delete_form.html.twig");
         echo "
+    </div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -167,7 +168,7 @@ class __TwigTemplate_2d208ba58581a02ef4b238a770c2cabc extends Template
 
 {% block body %}
     <p class=\"fs-1\">Informations sur un banque de sang</p>
-    <div class=\"ab\">
+    <div class=\"container\">
         <table class=\"table table-bordered border-primary\">
         <tbody>
             <tr>
@@ -188,13 +189,14 @@ class __TwigTemplate_2d208ba58581a02ef4b238a770c2cabc extends Template
             </tr>
         </tbody>
     </table>
-    </div>
+
 
     <a href=\"{{ path('app_banque_de_sang_index') }}\"><button type=\"button\" class=\"btn btn-primary\">Back</button></a>
 
     <a href=\"{{ path('app_banque_de_sang_edit', {'id': banque_de_sang.id}) }}\"><button type=\"button\" class=\"btn btn-info\">Edit</button></a>
 
     {{ include('banque_de_sang/_delete_form.html.twig') }}
+    </div>
 {% endblock %}
 ", "banque_de_sang/show.html.twig", "C:\\Users\\Fahd\\pidev\\templates\\banque_de_sang\\show.html.twig");
     }

@@ -1,0 +1,3 @@
+<?php //App%255CEntity%255CNotifications
+
+return [PHP_INT_MAX, []];

@@ -46,13 +46,14 @@ class __TwigTemplate_fe67d8e96f95f0f8a9c55b0ce9ef37ac extends Template
         // line 2
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 2, $this->source); })()), 'widget');
         echo "
-    <button type=\"button\" class=\"btn btn-success\">";
+    <button type=\"btn\" class=\"btn btn-success\">";
         // line 3
         echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 3, $this->source); })()), "Save")) : ("Save")), "html", null, true);
         echo "</button>
+
 ";
-        // line 4
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 4, $this->source); })()), 'form_end');
+        // line 5
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 5, $this->source); })()), 'form_end');
         echo "
 ";
         
@@ -75,14 +76,15 @@ class __TwigTemplate_fe67d8e96f95f0f8a9c55b0ce9ef37ac extends Template
 
     public function getDebugInfo()
     {
-        return array (  55 => 4,  51 => 3,  47 => 2,  43 => 1,);
+        return array (  56 => 5,  51 => 3,  47 => 2,  43 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{{ form_start(form) }}
     {{ form_widget(form) }}
-    <button type=\"button\" class=\"btn btn-success\">{{ button_label|default('Save') }}</button>
+    <button type=\"btn\" class=\"btn btn-success\">{{ button_label|default('Save') }}</button>
+
 {{ form_end(form) }}
 ", "banque_de_sang/_form.html.twig", "C:\\Users\\Fahd\\pidev\\templates\\banque_de_sang\\_form.html.twig");
     }

@@ -4,6 +4,8 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="stylesheet" type="text/css" href="{{ asset('style.css') }}">
+        <link rel="stylesheet" href="{{ asset('') }}">
+
 
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
@@ -61,7 +63,7 @@
             <header id="header" class="fixed-top">
                 <div class="container d-flex align-items-center">
 
-                    <h1 class="logo me-auto"><a href="{{ asset('index.html') }}"><span>Com</span>pany</a></h1>
+                    <h1 class="logo me-auto"><a href="{{ asset('index.html') }}"><span>GF</span>L</a></h1>
                     <!-- Uncomment below if you prefer to use an image logo -->
                     <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -90,10 +92,11 @@
                             <li><a href="{{ asset('portfolio.html') }}">Portfolio</a></li>
                             <li><a href="{{ asset('pricing.html') }}">Pricing</a></li>
                             <li><a href="{{ asset('blog.html') }}">Blog</a></li>
-                            <li><a href="{{ asset('contact.html') }}">Contact</a></li>
+                            <li><a href="{{ asset('/notifications') }}">Notifications</a></li>
 
                         </ul>
                         <i class="bi bi-list mobile-nav-toggle"></i>
+
                     </nav><!-- .navbar -->
 
                     <div class="header-social-links d-flex">
@@ -116,8 +119,8 @@
                         <div class="carousel-item active" style="background-image: url({{ asset('assets/img/slide/slide-1.jpg') }});">
                             <div class="carousel-container">
                                 <div class="carousel-content animate__animated animate__fadeInUp">
-                                    <h2>Welcome to <span>Company</span></h2>
-                                    <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+                                    <h2>Welcome to <span>GFL</span></h2>
+                                    <p>Le site peut également offrir des fonctionnalités pour prendre rendez-vous pour un don de sang, localiser les centres de collecte de sang les plus proches, et suivre les campagnes de collecte de sang en cours. Il peut également inclure des témoignages de donneurs de sang et des ressources pour répondre aux questions fréquentes sur le don de sang et les procédures associées.</p>
                                     <div class="text-center"><a href="" class="btn-get-started">Read More</a></div>
                                 </div>
                             </div>
@@ -464,7 +467,7 @@
                         <div class="row">
 
                             <div class="col-lg-3 col-md-6 footer-contact">
-                                <h3>Company</h3>
+                                <h3>GFL</h3>
                                 <p>
                                     A108 Adam Street <br>
                                     New York, NY 535022<br>
@@ -477,8 +480,8 @@
                             <div class="col-lg-2 col-md-6 footer-links">
                                 <h4>Useful Links</h4>
                                 <ul>
-                                    <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                                    <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+                                    <li><i class="bx bx-chevron-right"></i> <a href="/banquedesang">Banque de sang disponible</a></li>
+                                    <li><i class="bx bx-chevron-right"></i> <a href="/banquedesang/new">Ajouter banque de sang</a></li>
                                     <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
                                     <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
                                     <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
