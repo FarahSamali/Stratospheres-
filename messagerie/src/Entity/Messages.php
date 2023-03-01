@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\MessagesRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: MessagesRepository::class)]
 class Messages
@@ -15,9 +16,11 @@ class Messages
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: 'titre est obligatoire')]
     private ?string $title = null;
 
     #[ORM\Column(type: Types::TEXT)]
+    #[Assert\NotBlank(message: 'Vous ne pouvez pas envoyer un message vide !')]
     private ?string $message = null;
 
     #[ORM\Column]

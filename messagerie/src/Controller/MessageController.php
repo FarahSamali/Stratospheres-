@@ -47,13 +47,15 @@ class MessageController extends AbstractController
     }
 
     #[Route('/read/{id}', name: 'app_read')]
-    public function read(Messages $message): Response
+    public function read( $id): Response
     {
-        $message->setIsRead(true);
+
         $em = $this->getDoctrine()->getManager();
+        $message=  $em->getRepository(Messages::class)->find($id);
+        $message->setIsRead(true);
         $em->persist($message);
         $em->flush();
-        return $this->render('message/read.html.twig');
+        return $this->render('message/read.html.twig', ["message"=>$message]);
     }
 
     #[Route('/delete/{id}', name: 'app_delete')]

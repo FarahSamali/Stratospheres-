@@ -78,7 +78,7 @@ class AdminController extends AbstractController
     }
 
     #[Route('/admin/listusers/{id}/remove', name: 'removeusers')]
-    public function removeUser(Users $user): RedirectResponse
+    public function removeUser(Users $user): Response
     {
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->remove($user);
@@ -86,6 +86,6 @@ class AdminController extends AbstractController
 
         $this->addFlash('success', 'User account has been removed successfully.');
 
-        return $this->render('admin/list.html.twig');
+        return $this->redirectToRoute("listusers");
     }
 }

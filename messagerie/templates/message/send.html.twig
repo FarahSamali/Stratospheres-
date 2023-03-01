@@ -63,7 +63,19 @@
         <div class="row">
             <div class="col">
                 <h1>Envoyer un message</h1>
-                {{ form(form) }}
+                {{ form_start(form,{'attr': {'novalidate': 'novalidate'}} ) }}
+                {{form_label(form.title,"Title") }}
+                {{ form_widget(form.title) }}
+                {{form_errors(form.title) }}
+                {{form_label(form.message,"message") }}
+                {{ form_widget(form.message) }}
+                {{form_errors(form.message) }}
+                {{form_label(form.recipient,"Recipient") }}
+                {{ form_widget(form.recipient) }}
+                {{form_errors(form.recipient) }}
+                {{ form_end(form) }}
+
+
             </div>
         </div>
         <a href="{{ path('app_message') }}" class="btn btn-outline-primary">Acceuil</a>
