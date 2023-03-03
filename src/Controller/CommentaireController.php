@@ -34,10 +34,11 @@ class CommentaireController extends AbstractController
             $em = $doctrine->getManager();
             $annonce = $annonceRepository->find($idAnnonce);
             $comm->setAnnonce($annonce);
-           // var_dump(new \DateTime('now'));
-            //die();
             $comm->setDate(new \DateTime('now'));
-            //var_dump($annonce); die();
+            $userId=$request->get('userid');
+            var_dump($userId);
+            die();
+            //$com->setUserid($userId);
             $em->persist($comm);
             $em->flush();
             return $this->redirectToRoute('comm_affichage', array("idAnnonce" => $idAnnonce));

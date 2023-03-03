@@ -19,55 +19,65 @@ class Annonce
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups("annonces")]
     private ?int $id = null;
 
     #[ORM\Column(length: 40)]
     #[Assert\NotBlank(message:"Nom est obligatoire")]
+    #[Groups("annonces")]
 
     private ?string $nom = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups("annonces")]
    // #[Assert\NotBlank(message:"Image est obligatoire")]
     private  $image ;
 
     #[ORM\Column(length: 800)]
     #[Assert\NotBlank(message:"Descreption est obligatoire")]
     #[Assert\Length(min:15,minMessage:"La descreption doit comporter au moins {{ limit }} caracteres")]
-
+    #[Groups("annonces")]
     private ?string $descreption = null;
 
     #[ORM\Column(length: 255)]
     #[Assert\NotBlank(message:"Titre est obligatoire")]
     #[Assert\Length(min:10,minMessage:"Le titre doit comporter au moins {{ limit }} caracteres")]
-
+    #[Groups("annonces")]
     private ?string $titre = null;
 
     #[ORM\Column(length: 255)]
     #[Assert\NotBlank(message:"Tag est obligatoire")]
+    #[Groups("annonces")]
     private ?string $tag = null;
 
     #[ORM\Column]
     #[Assert\Positive(message:"Le numéro ne peut pas etre negatif")]
+    #[Groups("annonces")]
     //#[Assert\Range(min:8,max:8,notInRangeMessage:"Le numéro doit comporter 8 chiffre ")]
     private ?int $tel = null;
 
     #[ORM\Column(length: 255)]
     #[Assert\NotBlank(message:"Email est obligatoire")]
     #[Assert\Email(message:"L'E-mail '{{ value }}' n'est pas valide ")]
+    #[Groups("annonces")]
     private ?string $email = null;
 
     #[ORM\Column(length: 255)]
 
     #[Assert\NotBlank(message:"Local est obligatoire")]
+    #[Groups("annonces")]
     private ?string $local = null;
 
     #[ORM\Column(name:"etat", type:"string", columnDefinition:"enum('dispo', 'indispo')")]
+    #[Groups("annonces")]
     private  $etat ;
 
     #[ORM\Column(length: 255)]
+    #[Groups("annonces")]
     private $categorie ;
 
     #[ORM\OneToMany(mappedBy: 'idAnnonce', targetEntity: Commentaire::class)]
+    #[Groups("annonces")]
     private Collection $commentaires;
 
     public function __construct()
