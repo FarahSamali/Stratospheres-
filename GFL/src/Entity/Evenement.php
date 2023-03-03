@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use phpDocumentor\Reflection\DocBlock\Tags\PropertyRead;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Serializer\Annotation\Groups ;
 
@@ -16,6 +17,7 @@ class Evenement
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups("post:read")]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
@@ -25,13 +27,16 @@ class Evenement
         minMessage: 'le nom doit etre supperieur à {{ limit }} caracteres',
         maxMessage: 'le nom ne doit pas dépasser {{ limit }} caracteres',)]
     #[Assert\NotNull]
+    #[Groups("post:read")]
     private ?string $nom = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups("post:read")]
     private ?string $lieu = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     #[Assert\GreaterThan("today")]
+    #[Groups("post:read")]
     private ?\DateTimeInterface $date = null;
 
     #[ORM\Column(length: 255)]
@@ -42,18 +47,22 @@ class Evenement
         maxMessage: 'la description ne doit pas dépasser {{ limit }} caracteres',)]
     #[Assert\NotNull]
     #[Assert\NotBlank( message:"Votre description ne doit pas etre vide")]
+    #[Groups("post:read")]
     private ?string $description = null;
 
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     #[Assert\GreaterThan("today")]
+    #[Groups("post:read")]
     private ?\DateTimeInterface $datefin = null;
 
 
     #[ORM\OneToMany(mappedBy: 'evenement', targetEntity: Participation::class)]
+    #[Groups("post:read")]
     private Collection $participations;
 
     #[ORM\Column(length: 255)]
+    #[Groups("post:read")]
     private ?string $image = null;
 
 

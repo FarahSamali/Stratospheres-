@@ -34,8 +34,10 @@
         <link href="{{ asset ('admin/vendor/select2/select2.min.css') }}" rel="stylesheet" media="all">
         <link href="{{ asset ('admin/vendor/perfect-scrollbar/perfect-scrollbar.css') }}" rel="stylesheet" media="all">
 
+
         <!-- Main CSS-->
         <link href="{{ asset ('admin/css/theme.css') }}" rel="stylesheet" media="all">
+        <link rel="stylesheet" href="{{ asset ('https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css') }}" integrity="sha512-/zs32ZEJh+/EO2N1b0PEdoA10JkdC3zJ8L5FTiQu82LR9S/rOQNfQN7U59U9BC12swNeRAz3HSzIL2vpp4fv3w==" crossorigin="anonymous" referrerpolicy="no-referrer">
     {% endblock %}
 
     {% block javascripts %}
@@ -58,6 +60,8 @@
         <script src="{{ asset ('admin/vendor/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
         <script src="{{ asset ('admin/vendor/chartjs/Chart.bundle.min.js') }}"></script>
         <script src="{{ asset ('admin/vendor/select2/select2.min.js') }}">
+            <script src="{{ asset ('https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js') }}" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
         </script>
 
         <!-- Main JS-->
@@ -86,25 +90,12 @@
             <div class="container-fluid">
                 <ul class="navbar-mobile__list list-unstyled">
                     <li class="has-sub">
-                        <a class="js-arrow" href="#">
+                        <a class="js-arrow" href="Admin/index.html">
                             <i class="fas fa-tachometer-alt"></i>Dashboard</a>
-                        <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                            <li>
-                                <a href="{{ asset ('admin/index.html') }}">Dashboard 1</a>
-                            </li>
-                            <li>
-                                <a href="{{ asset ('admin/index2.html') }}">Dashboard 2</a>
-                            </li>
-                            <li>
-                                <a href="{{ asset ('admin/index3.html') }}">Dashboard 3</a>
-                            </li>
-                            <li>
-                                <a href="{{ asset ('admin/index4.html') }}">Dashboard 4</a>
-                            </li>
-                        </ul>
+
                     </li>
                     <li>
-                        <a href="{{ asset ('admin/chart.html') }}">
+                        <a href="{{ asset ('/stats') }}">
                             <i class="fas fa-chart-bar"></i>Charts</a>
                     </li>
                     <li>
@@ -195,11 +186,11 @@
             <nav class="navbar-sidebar">
                 <ul class="list-unstyled navbar__list">
                     <li class="active has-sub">
-                        <a class="js-arrow" href="{{ asset ('admin/index.html') }}">
+                        <a class="js-arrow" href="{{ asset ('Admin/index.html') }}">
                             <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                     </li>
                     <li>
-                        <a href="{{ asset ('admin/chart.html') }}">
+                        <a href="{{ asset ('/stats') }}">
                             <i class="fas fa-chart-bar"></i>Charts</a>
                     </li>
                     <li>
@@ -829,7 +820,7 @@
                                                 <div class="au-message__item-text">
                                                     <div class="avatar-wrap">
                                                         <div class="avatar">
-                                                            <img src="admin/images/icon/avatar-02.jpg" alt="John Smith">
+                                                            <img src="{{ asset ('admin/images/icon/avatar-02.jpg') }}" alt="John Smith">
                                                         </div>
                                                     </div>
                                                     <div class="text">

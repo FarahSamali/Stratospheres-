@@ -33,7 +33,7 @@
            <td><img src="{{ asset('uploads/evenements/'~event.image) }}" style="margin-right: 5px ;margin-top :5px" alt="" width="100" height="100"/></td>
             <td><a href="{{ path('update_Event', {'id': event.id}) }}"  class="btn btn-dark">Modifier</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
             <td><a href="{{ path('remove_Event', {'id': event.id}) }}" class="btn btn-dark">Supprimer</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-
+            <td><a href="{{ path('showEvenement', {'id': event.id}) }}"  class="btn btn-dark">details</a></td>
         </tr>
 
 

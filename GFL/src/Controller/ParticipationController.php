@@ -11,18 +11,31 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
+use Symfony\Component\Mime\Email;
+use Symfony\Component\Mime\Address;
+use Symfony\Component\Mailer\MailerInterface;
+use SymfonyCasts\Bundle\VerifyEmail\Exception\VerifyEmailExceptionInterface;
+use SymfonyCasts\Bundle\VerifyEmail\VerifyEmailHelperInterface;
+use App\Service\UploaderService;
+use App\Service\MailerService;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use App\Service\PdfService;
+
+
+
 
 class ParticipationController extends AbstractController
 {
-    #[Route('/participation', name: 'app_participation')]
+    #[Route('/home', name: 'app_participation')]
     public function index(): Response
     {
-        return $this->render('participation/add.html.twig', [
+        return $this->render('back.html.twig', [
             'controller_name' => 'ParticipationController',
         ]);
     }
     #[Route('/addpartic', name: 'add_Participation')]
-    public function addpartic(Request  $request,ManagerRegistry $doctrine)
+    public function addpartic(Request  $request,ManagerRegistry $doctrine/*,VerifyEmailHelperInterface $verifyEmailHelper, UploaderService $uploaderService, MailerService $mailer*/)
     {
         $participation= new Participation();
         $form= $this->createForm(ParticipationType::class,$participation);
@@ -31,11 +44,18 @@ class ParticipationController extends AbstractController
             $em=$doctrine->getManager();
             $em->persist($participation);
             $em->flush();
-            return  $this->redirectToRoute("add_Participation");
+            /*$message='ajouter';
+          $mailMessage = $participation->getNom().''.$participation->getPrenom().''.$message;
+          $mailer->sendEmail(content: $mailMessage);*/
+          return  $this->redirectToRoute("add_Participation");
         }
         return $this->renderForm("participation/add.html.twig",array("FormPartic"=>$form));
 
     }
+
+
+
+
     #[Route('/listPartic', name: 'listPartic')]
     public function listPartic(ParticipationRepository $repository)
     {
@@ -64,5 +84,22 @@ class ParticipationController extends AbstractController
         }
         return $this->renderForm("participation/update.html.twig",array("FormPartic"=>$form));
     }
+    #[Route('/showEvenement/{id}', name: 'showEvenement')]
+    public function showEvenement(ParticipationRepository $repo,$id,EvenementRepository $repository)
+    {
+        $event= $repository->find($id);
+        $participation= $repo->getParticipationByEvenement($id);
+        return $this->render("participation/showEvenement.html.twig",
+            array("tabEvent"=>$event,
+                "tabPartic"=>$participation));
+    }
+
+    #[Route('/listPartic/pdf/{id}', name: 'participation.pdf')]
+    public function generatePdfParticipation(Participation $participation = null, PdfService $pdf) {
+        $html = $this->render('participation/list.html.twig', ['tabPartic' => $participation]);
+        $pdf->showPdfFile($html);
+    }
+
+
 
 }

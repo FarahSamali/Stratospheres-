@@ -7,6 +7,9 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use http\Message;
+use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\DBAL\Types\Types;
+use Symfony\Component\Serializer\Annotation\Groups ;
 
 #[ORM\Entity(repositoryClass: ParticipationRepository::class)]
 class Participation
@@ -27,12 +30,13 @@ class Participation
 
     #[ORM\Column(length: 255)]
     #[Asssert\NotBlank(message:"Email is required")]
-    #[Assert\Email(message:"the email '{{value}}' is not valid email.")]
+    #[Assert\Email(message:"l'email '{{value}}' est non valid.")]
     private ?string $email = null;
 
     #[ORM\Column(length: 8)]
+    #[Asssert\NotBlank(message:"numero is required")]
+    #[Assert\Positive(message:"numero doit etre positive")]
     #[Assert\NotNull]
-    #[Assert\NotBlank(message: "Votre numéro de telephone ne doit pas etre vide")]
     private ?int $numero = null;
 
 

@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Evenement;
 use App\Form\EvenementType;
 use App\Repository\EvenementRepository;
+use App\Repository\ParticipationRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -12,7 +13,20 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\String\Slugger\SluggerInterface;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
+use Symfony\Component\Mime\Email;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use Symfony\Component\Serializer\SerializerInterface;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Symfony\Component\Validator\Constraints\Json;
+use symfony\Component\Serializer\Annotation\Groups;
+use Knp\Component\Pager\PaginatorInterface;
 
 
 class EvenementController extends AbstractController
@@ -60,6 +74,7 @@ class EvenementController extends AbstractController
             $em=$doctrine->getManager();
             $em->persist($event);
             $em->flush();
+
             return  $this->redirectToRoute("add_event");
         }
         return $this->render("evenement/add.html.twig",['form'=> $form->createView()]);
@@ -74,9 +89,10 @@ class EvenementController extends AbstractController
     }
 
     #[Route('/listEventFront', name: 'listeventFront')]
-    public function listEventFront(EvenementRepository $repository)
+    public function listEventFront(EvenementRepository $repository, PaginatorInterface $paginator ,Request  $request)
     {
         $event= $repository->findAll();
+        $event = $paginator->paginate($event, $request->query->getInt('page', 1),2);
         return $this->render("evenement/listFront.html.twig",array("tabEvent"=>$event));
     }
     #[Route('/removeEvent/{id}', name: 'remove_Event')]
@@ -101,6 +117,121 @@ class EvenementController extends AbstractController
         }
         return $this->render("evenement/update.html.twig",['form'=> $form->createView()]);
     }
+    #[Route('/showEvenement/{id}', name: 'showEvenement')]
+    public function showEvenement(ParticipationRepository $repo,$id,EvenementRepository $repository)
+    {
+        $event= $repository->find($id);
+        $participation= $repo->getParticipationByEvenement($id);
+        return $this->render("participation/showEvenement.html.twig",
+            array("tabEvent"=>$event,
+                "tabPartic"=>$participation));
+    }
+    #[Route('/stats', name: 'stats')]
+    public function statistiques(){
+
+        return $this->render('evenement/stats.html.twig');
+    }
+
+        ///////////////Mobile/////////////////
+
+   #[Route('/addEventMobile',name :'addmobile')]
+    public function ajouterevenement(Request $request,NormalizerInterface $Normalizer)
+    {
+        $evenement = new Evenement();
+        $nom = $request->query->get("nom");
+        $lieu = $request->query->get("lieu");
+        $description = $request->query->get("description");
+        $date =$request->query->get('date');
+        $datefin =$request->query->get('date_fin');
+        $image = $request->query->get('image');
+
+        $em = $this->getDoctrine()->getManager();
+
+
+
+        $evenement->setNom($nom);
+        $evenement->setDescription($description);
+        $evenement->setLieu($lieu);
+        $evenement->setDate(new \DateTime($date));
+        $evenement->setDatefin(new \DateTime($datefin));
+        $evenement->setImage($image);
+        $em->persist($evenement);
+        $em->flush();
+        $serializer = new Serializer([new ObjectNormalizer()]);
+        $formatted = $serializer->normalize($evenement);
+        //  return new JsonResponse($formatted);
+        //return new JsonResponse("event ajoute");
+        $jsonContent=$Normalizer->normalize($evenement,'json',['groups'=>'post:read']);
+        return new Response("evenement ajoutee".json_encode( $jsonContent));
+        //http://127.0.0.1:8000/addEventMobile?nom=atatatat&lieu=atatatat&description=ytitiutuit&date=2021-04-09&datefin=2021-04-09&image=tatata.jpg&datefin=8&categorie=hhhhh
+
+
+    }
+    #[Route('/deleteEventmobile',name :'deleteEventmobile')]
+    public function deleteEventmobile(Request $request,NormalizerInterface $Normalizer) {
+        $id = $request->get("id");
+
+        $em = $this->getDoctrine()->getManager();
+        $evenement = $em->getRepository(Evenement::class)->find($id);
+        if($evenement!=null ) {
+            $em->remove($evenement);
+            $em->flush();
+
+            $serialize = new Serializer([new ObjectNormalizer()]);
+            $formatted = $serialize->normalize($evenement);
+            // return new JsonResponse($formatted);
+            //return new JsonResponse("event deleted.");
+            $jsonContent=$Normalizer->normalize($evenement,'json',['groups'=>'post:read']);
+            return new Response("evenement supprimee".json_encode( $jsonContent));
+
+
+        }
+        return new JsonResponse("id event invalide.");
+        //http://127.0.0.1:8000/deleteEventmobile?id=38
+
+
+    }
+    #[Route('/updateeventMobile',name :'updateeventMobile')]
+    public function modifierevenement(Request $request,NormalizerInterface $Normalizer) {
+        $em = $this->getDoctrine()->getManager();
+        $evenement = $this->getDoctrine()->getManager()
+            ->getRepository(Evenement::class)
+            ->find($request->get("id"));
+        $evenement->setNom($request->get("nom"));
+        $evenement->setDescription($request->get("description"));
+        $evenement->setLieu($request->get("lieu"));
+        $evenement->setDate(new \DateTime($request->get("date")));
+        $evenement->setDatefin(new \DateTime($request->get("datefin")));
+        $evenement->setImage($request->get("image"));
+
+
+        $em->persist($evenement);
+        $em->flush();
+        $serializer = new Serializer([new ObjectNormalizer()]);
+        $formatted = $serializer->normalize($evenement);
+        //return new JsonResponse("event a ete modifiee avec success.");
+        $jsonContent = $Normalizer->normalize($evenement, 'json',['groups'=>'post:read']);
+        return new Response("event a ete modifiee avec success".json_encode($jsonContent));
+// http://127.0.0.1:8000/updateeventMobile?id=37&nom=mariem&lieu=mariem&description=ytitiutuit&date=2021-04-09&datefin=2021-04-09&image=tatata.jpg&nbrPersonnes=8&categorie=hhhhh
+    }
+
+
+    #[Route('/afficheeventMobile',name :'afficheeventMobile')]
+    public function afficheevent(NormalizerInterface $normalizer)
+    {
+
+        $repository = $this->getDoctrine()->getRepository(Evenement::class);
+        $evenement =$repository->findAll();
+        $jsonContent = $normalizer->normalize($evenement, 'json',['groups'=>'post:read']);
+
+        return new Response("Liste des evenements :".json_encode($jsonContent));
+
+    }
+
+
+
+
+
 
 
 
