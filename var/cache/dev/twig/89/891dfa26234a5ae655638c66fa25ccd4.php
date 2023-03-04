@@ -33,7 +33,7 @@ class __TwigTemplate_26ac0887efe5cb6ec8c050b741cd17c2 extends Template
     protected function doGetParent(array $context)
     {
         // line 1
-        return "base.html.twig";
+        return "back.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -45,7 +45,7 @@ class __TwigTemplate_26ac0887efe5cb6ec8c050b741cd17c2 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "banque_de_sang/index.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "banque_de_sang/index.html.twig", 1);
+        $this->parent = $this->loadTemplate("back.html.twig", "banque_de_sang/index.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -85,7 +85,7 @@ class __TwigTemplate_26ac0887efe5cb6ec8c050b741cd17c2 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "<div class=\"container\">
+        echo "<div class=\"card\" align=\"center\" style=\"margin-left: 300px\">
     <p class=\"fs-1\">La liste des banques de sang en Tunisie</p>
     <table class=\"table table-striped table-hover\">
         <thead>
@@ -177,12 +177,12 @@ class __TwigTemplate_26ac0887efe5cb6ec8c050b741cd17c2 extends Template
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'base.html.twig' %}
+        return new Source("{% extends 'back.html.twig' %}
 
 {% block title %}Banque{% endblock %}
 
 {% block body %}
-<div class=\"container\">
+<div class=\"card\" align=\"center\" style=\"margin-left: 300px\">
     <p class=\"fs-1\">La liste des banques de sang en Tunisie</p>
     <table class=\"table table-striped table-hover\">
         <thead>

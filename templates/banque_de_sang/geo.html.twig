@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Localisation{% endblock %}
+
+
+{% block stylesheets %}
+
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css') }}" />
+    <style>
+
+
+        #map{
+
+            width: 100%;
+            height: 50vh;
+        }
+    </style>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+
+<button id="localisation">Ou suis-je ?</button>
+<button id="carte">Sur la carte ?</button>
+<div id="infos">Cliquer...</div>
+<div id="map"></div>
+
+<script>
+    let maPosition ;
+    let inputLocalisation = document.getElementById('localisation');
+    let inputCarte = document.getElementById('carte');
+    let infos = document.getElementById('infos');
+
+
+    var map = L.map('map').setView([36.831232, 10.1384192], 13);
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="{{ asset('https://www.openstreetmap.org/copyright') }}">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    L.marker([36.707955, 10.179464]).addTo(map)
+        .bindPopup('Home.<br> Easily customizable.')
+        .openPopup();
+
+
+
+    inputLocalisation.onclick = function () {
+        navigator.geolocation.getCurrentPosition(function (position){
+
+            maPosition = position ;
+
+            console.table(maPosition.coords);
+            infos.innerHTML = `Position: ${maPosition.coords.latitude},
+            ${maPosition.coords.longitude}`
+        })
+    }
+
+
+
+
+
+</script>
+
+
+{% endblock %}

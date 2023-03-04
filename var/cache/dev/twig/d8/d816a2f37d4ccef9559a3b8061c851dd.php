@@ -85,61 +85,62 @@ class __TwigTemplate_b62f1346366c00563eadfa489126f6d3 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>NotifyAlert index</h1>
+        echo "<div class=\"card-footer\" style=\"margin-top: 300px\" align=\"center\" >
+    <h1>NotifyAlert index</h1>
 
     <table class=\"table\">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Message</th>
-                <th>Recipient</th>
-                <th>Sender</th>
-                <th>Timestamp</th>
-                <th>actions</th>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Message</th>
+            <th>Recipient</th>
+            <th>Sender</th>
+            <th>Timestamp</th>
+            <th>actions</th>
+        </tr>
         </thead>
         <tbody>
         ";
-        // line 21
+        // line 22
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["notify_alerts"]) || array_key_exists("notify_alerts", $context) ? $context["notify_alerts"] : (function () { throw new RuntimeError('Variable "notify_alerts" does not exist.', 21, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["notify_alerts"]) || array_key_exists("notify_alerts", $context) ? $context["notify_alerts"] : (function () { throw new RuntimeError('Variable "notify_alerts" does not exist.', 22, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["notify_alert"]) {
-            // line 22
+            // line 23
             echo "            <tr>
                 <td>";
-            // line 23
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["notify_alert"], "id", [], "any", false, false, false, 23), "html", null, true);
-            echo "</td>
-                <td>";
             // line 24
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["notify_alert"], "title", [], "any", false, false, false, 24), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["notify_alert"], "id", [], "any", false, false, false, 24), "html", null, true);
             echo "</td>
                 <td>";
             // line 25
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["notify_alert"], "message", [], "any", false, false, false, 25), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["notify_alert"], "title", [], "any", false, false, false, 25), "html", null, true);
             echo "</td>
                 <td>";
             // line 26
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["notify_alert"], "recipient", [], "any", false, false, false, 26), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["notify_alert"], "message", [], "any", false, false, false, 26), "html", null, true);
             echo "</td>
                 <td>";
             // line 27
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["notify_alert"], "sender", [], "any", false, false, false, 27), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["notify_alert"], "recipient", [], "any", false, false, false, 27), "html", null, true);
             echo "</td>
                 <td>";
             // line 28
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["notify_alert"], "timestamp", [], "any", false, false, false, 28), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["notify_alert"], "sender", [], "any", false, false, false, 28), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 29
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["notify_alert"], "timestamp", [], "any", false, false, false, 29), "html", null, true);
             echo "</td>
                 <td>
                     <a href=\"";
-            // line 30
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_notify_alert_show", ["id" => twig_get_attribute($this->env, $this->source, $context["notify_alert"], "id", [], "any", false, false, false, 30)]), "html", null, true);
+            // line 31
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_notify_alert_show", ["id" => twig_get_attribute($this->env, $this->source, $context["notify_alert"], "id", [], "any", false, false, false, 31)]), "html", null, true);
             echo "\">show</a>
                     <a href=\"";
-            // line 31
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_notify_alert_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["notify_alert"], "id", [], "any", false, false, false, 31)]), "html", null, true);
+            // line 32
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_notify_alert_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["notify_alert"], "id", [], "any", false, false, false, 32)]), "html", null, true);
             echo "\">edit</a>
                 </td>
             </tr>
@@ -147,7 +148,7 @@ class __TwigTemplate_b62f1346366c00563eadfa489126f6d3 extends Template
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 35
+            // line 36
             echo "            <tr>
                 <td colspan=\"7\">no records found</td>
             </tr>
@@ -156,14 +157,15 @@ class __TwigTemplate_b62f1346366c00563eadfa489126f6d3 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['notify_alert'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 39
+        // line 40
         echo "        </tbody>
     </table>
 
     <a href=\"";
-        // line 42
+        // line 43
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_notify_alert_new");
         echo "\">Create new</a>
+</div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -185,7 +187,7 @@ class __TwigTemplate_b62f1346366c00563eadfa489126f6d3 extends Template
 
     public function getDebugInfo()
     {
-        return array (  165 => 42,  160 => 39,  151 => 35,  142 => 31,  138 => 30,  133 => 28,  129 => 27,  125 => 26,  121 => 25,  117 => 24,  113 => 23,  110 => 22,  105 => 21,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  166 => 43,  161 => 40,  152 => 36,  143 => 32,  139 => 31,  134 => 29,  130 => 28,  126 => 27,  122 => 26,  118 => 25,  114 => 24,  111 => 23,  106 => 22,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -195,19 +197,20 @@ class __TwigTemplate_b62f1346366c00563eadfa489126f6d3 extends Template
 {% block title %}NotifyAlert index{% endblock %}
 
 {% block body %}
+<div class=\"card-footer\" style=\"margin-top: 300px\" align=\"center\" >
     <h1>NotifyAlert index</h1>
 
     <table class=\"table\">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Message</th>
-                <th>Recipient</th>
-                <th>Sender</th>
-                <th>Timestamp</th>
-                <th>actions</th>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Message</th>
+            <th>Recipient</th>
+            <th>Sender</th>
+            <th>Timestamp</th>
+            <th>actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for notify_alert in notify_alerts %}
@@ -232,6 +235,7 @@ class __TwigTemplate_b62f1346366c00563eadfa489126f6d3 extends Template
     </table>
 
     <a href=\"{{ path('app_notify_alert_new') }}\">Create new</a>
+</div>
 {% endblock %}
 ", "notify_alert/index.html.twig", "C:\\Users\\Fahd\\pidev\\templates\\notify_alert\\index.html.twig");
     }

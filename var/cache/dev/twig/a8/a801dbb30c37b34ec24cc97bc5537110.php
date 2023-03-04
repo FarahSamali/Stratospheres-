@@ -33,7 +33,7 @@ class __TwigTemplate_494f1adfafb3434eb746686a2d052f2f extends Template
     protected function doGetParent(array $context)
     {
         // line 1
-        return "base.html.twig";
+        return "back.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -45,7 +45,7 @@ class __TwigTemplate_494f1adfafb3434eb746686a2d052f2f extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "banque_de_sang/edit.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "banque_de_sang/edit.html.twig", 1);
+        $this->parent = $this->loadTemplate("back.html.twig", "banque_de_sang/edit.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -89,7 +89,7 @@ class __TwigTemplate_494f1adfafb3434eb746686a2d052f2f extends Template
 
     ";
         // line 8
-        echo twig_include($this->env, $context, "banque_de_sang/_form.html.twig", ["button_label" => "Update"]);
+        echo twig_include($this->env, $context, "banque_de_sang/new.html.twig", ["button_label" => "Update"]);
         echo "
 
     <a href=\"";
@@ -127,14 +127,14 @@ class __TwigTemplate_494f1adfafb3434eb746686a2d052f2f extends Template
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'base.html.twig' %}
+        return new Source("{% extends 'back.html.twig' %}
 
 {% block title %}Edit BanqueDeSang{% endblock %}
 
 {% block body %}
     <p class=\"fs-1\">Modifier les Informations sur les banques des sangs</p>
 
-    {{ include('banque_de_sang/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('banque_de_sang/new.html.twig', {'button_label': 'Update'}) }}
 
     <a href=\"{{ path('app_banque_de_sang_index') }}\"><button class=\"btn btn-dark\">back to list</button></a>
 

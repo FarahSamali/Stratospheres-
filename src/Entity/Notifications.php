@@ -16,21 +16,22 @@ class Notifications
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message:"Title is required")]
     private ?string $title = null;
-    #[Assert\NotBlank(message:"Title is required")]
+
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message:"Message is required")]
     private ?string $message = null;
-    #[Assert\NotBlank(message:"Title is required")]
-    #[Assert\Email(message:"The email '{{ value }}' is not a valid email ")]
+
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message:"Email is required")]
     private ?string $recipient = null;
-    #[Assert\NotBlank(message:"Email is required")]
-    #[Assert\Email(message:"The email '{{ value }}' is not a valid email ")]
     #[ORM\Column(length: 255)]
-    private ?string $sender = null;
     #[Assert\NotBlank(message:"Email is required")]
+    private ?string $sender = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
+    #[Assert\DateTime(message:"Vérifier que la valeur est un objet de type Datetime")]
     private ?\DateTimeInterface $timestamp = null;
 
     public function getId(): ?int

@@ -4,7 +4,7 @@ namespace App\Entity;
 
 use App\Repository\BanqueDeSangRepository;
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Validator\Constraints as Assert;
 #[ORM\Entity(repositoryClass: BanqueDeSangRepository::class)]
 class BanqueDeSang
 {
@@ -14,16 +14,21 @@ class BanqueDeSang
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $nom = null;
     #[Assert\NotBlank(message:"Nom is required")]
 
+    private ?string $nom = null;
+
     #[ORM\Column(length: 255)]
-    private ?string $adresse = null;
     #[Assert\NotBlank(message:"adresse is required")]
+    #[Assert\Length(min:10,minMessage:"La adresse doit etre supérieur a 10 charactére")]
+    private ?string $adresse = null;
+
 
     #[ORM\Column]
-    private ?int $tel = null;
     #[Assert\NotBlank(message:"Tel is required")]
+    #[Assert\Positive(message:"Le numéro de téléphone doit etre positive")]
+    private ?int $tel = null;
+
 
     public function getId(): ?int
     {

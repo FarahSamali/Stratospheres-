@@ -612,7 +612,10 @@ class __TwigTemplate_91d1451f95013abc1962b923327aa792 extends Template
                                     </div>
                                     <div class=\"email__item\">
                                         <div class=\"image img-cir img-40\">
-                                            <img src=\"admin/images/icon/avatar-05.jpg\" alt=\"Cynthia Harvey\" />
+                                            <img src=\"";
+        // line 261
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admin/images/icon/avatar-05.jpg"), "html", null, true);
+        echo "\" alt=\"Cynthia Harvey\" />
                                         </div>
                                         <div class=\"content\">
                                             <p>Meeting about new dashboard...</p>
@@ -621,7 +624,10 @@ class __TwigTemplate_91d1451f95013abc1962b923327aa792 extends Template
                                     </div>
                                     <div class=\"email__item\">
                                         <div class=\"image img-cir img-40\">
-                                            <img src=\"admin/images/icon/avatar-04.jpg\" alt=\"Cynthia Harvey\" />
+                                            <img src=\"";
+        // line 270
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admin/images/icon/avatar-04.jpg"), "html", null, true);
+        echo "\" alt=\"Cynthia Harvey\" />
                                         </div>
                                         <div class=\"content\">
                                             <p>Meeting about new dashboard...</p>
@@ -676,7 +682,10 @@ class __TwigTemplate_91d1451f95013abc1962b923327aa792 extends Template
                         <div class=\"account-wrap\">
                             <div class=\"account-item clearfix js-item-menu\">
                                 <div class=\"image\">
-                                    <img src=\"admin/images/icon/avatar-01.jpg\" alt=\"John Doe\" />
+                                    <img src=\"";
+        // line 325
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admin/images/icon/avatar-01.jpg"), "html", null, true);
+        echo "\" alt=\"John Doe\" />
                                 </div>
                                 <div class=\"content\">
                                     <a class=\"js-acc-btn\" href=\"#\">john doe</a>
@@ -685,7 +694,10 @@ class __TwigTemplate_91d1451f95013abc1962b923327aa792 extends Template
                                     <div class=\"info clearfix\">
                                         <div class=\"image\">
                                             <a href=\"#\">
-                                                <img src=\"admin/images/icon/avatar-01.jpg\" alt=\"John Doe\" />
+                                                <img src=\"";
+        // line 334
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admin/images/icon/avatar-01.jpg"), "html", null, true);
+        echo "\" alt=\"John Doe\" />
                                             </a>
                                         </div>
                                         <div class=\"content\">
@@ -766,7 +778,10 @@ class __TwigTemplate_91d1451f95013abc1962b923327aa792 extends Template
     <aside class=\"menu-sidebar d-none d-lg-block\">
         <div class=\"logo\">
             <a href=\"#\">
-                <img src=\"admin/images/icon/logo.png\" alt=\"Cool Admin\" />
+                <img src=\"";
+        // line 379
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admin/images/icon/logo.png"), "html", null, true);
+        echo "\" alt=\"Cool Admin\" />
             </a>
         </div>
         <div class=\"menu-sidebar__content js-scrollbar1\">
@@ -777,21 +792,36 @@ class __TwigTemplate_91d1451f95013abc1962b923327aa792 extends Template
                             <i class=\"fas fa-tachometer-alt\"></i>Dashboard</a>
                         <ul class=\"list-unstyled navbar__sub-list js-sub-list\">
                             <li>
-                                <a href=\"admin/index.html\">Dashboard 1</a>
+                                <a href=\"";
+        // line 390
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admin/index.html"), "html", null, true);
+        echo "\">Dashboard 1</a>
                             </li>
                             <li>
-                                <a href=\"admin/index2.html\">Dashboard 2</a>
+                                <a href=\"";
+        // line 393
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admin/index2.html"), "html", null, true);
+        echo "\">Dashboard 2</a>
                             </li>
                             <li>
-                                <a href=\"admin/index3.html\">Dashboard 3</a>
+                                <a href=\"";
+        // line 396
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admin/index3.html"), "html", null, true);
+        echo "\">Dashboard 3</a>
                             </li>
                             <li>
-                                <a href=\"admin/index4.html\">Dashboard 4</a>
+                                <a href=\"";
+        // line 399
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admin/index4.html"), "html", null, true);
+        echo "\">Dashboard 4</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href=\"admin/chart.html\">
+                        <a href=\"";
+        // line 404
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admin/chart.html"), "html", null, true);
+        echo "\">
                             <i class=\"fas fa-chart-bar\"></i>Charts</a>
                     </li>
                     <li>
@@ -802,15 +832,24 @@ class __TwigTemplate_91d1451f95013abc1962b923327aa792 extends Template
                             <i class=\"fas fa-table\"></i>Tables</a>
                     </li>
                     <li>
-                        <a href=\"admin/form.html\">
+                        <a href=\"";
+        // line 412
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admin/form.html"), "html", null, true);
+        echo "\">
                             <i class=\"far fa-check-square\"></i>Forms</a>
                     </li>
                     <li>
-                        <a href=\"admin/calendar.html\">
+                        <a href=\"";
+        // line 416
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admin/calendar.html"), "html", null, true);
+        echo "\">
                             <i class=\"fas fa-calendar-alt\"></i>Calendar</a>
                     </li>
                     <li>
-                        <a href=\"admin/map.html\">
+                        <a href=\"";
+        // line 420
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admin/map.html"), "html", null, true);
+        echo "\">
                             <i class=\"fas fa-map-marker-alt\"></i>Maps</a>
                     </li>
                     <li class=\"admin/has-sub\">
@@ -818,13 +857,22 @@ class __TwigTemplate_91d1451f95013abc1962b923327aa792 extends Template
                             <i class=\"fas fa-copy\"></i>Pages</a>
                         <ul class=\"list-unstyled navbar__sub-list js-sub-list\">
                             <li>
-                                <a href=\"admin/login.html\">Login</a>
+                                <a href=\"";
+        // line 428
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admin/login.html"), "html", null, true);
+        echo "\">Login</a>
                             </li>
                             <li>
-                                <a href=\"admin/register.html\">Register</a>
+                                <a href=\"";
+        // line 431
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admin/register.html"), "html", null, true);
+        echo "\">Register</a>
                             </li>
                             <li>
-                                <a href=\"admin/forget-pass.html\">Forget Password</a>
+                                <a href=\"";
+        // line 434
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admin/forget-pass.html"), "html", null, true);
+        echo "\">Forget Password</a>
                             </li>
                         </ul>
                     </li>
@@ -833,34 +881,64 @@ class __TwigTemplate_91d1451f95013abc1962b923327aa792 extends Template
                             <i class=\"fas fa-desktop\"></i>UI Elements</a>
                         <ul class=\"list-unstyled navbar__sub-list js-sub-list\">
                             <li>
-                                <a href=\"admin/button.html\">Button</a>
+                                <a href=\"";
+        // line 443
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admin/button.html"), "html", null, true);
+        echo "\">Button</a>
                             </li>
                             <li>
-                                <a href=\"admin/badge.html\">Badges</a>
+                                <a href=\"";
+        // line 446
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admin/badge.html"), "html", null, true);
+        echo "\">Badges</a>
                             </li>
                             <li>
-                                <a href=\"admin/tab.html\">Tabs</a>
+                                <a href=\"";
+        // line 449
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admin/tab.html"), "html", null, true);
+        echo "\">Tabs</a>
                             </li>
                             <li>
-                                <a href=\"admin/card.html\">Cards</a>
+                                <a href=\"";
+        // line 452
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admin/card.html"), "html", null, true);
+        echo "\">Cards</a>
                             </li>
                             <li>
-                                <a href=\"admin/alert.html\">Alerts</a>
+                                <a href=\"";
+        // line 455
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admin/alert.html"), "html", null, true);
+        echo "\">Alerts</a>
                             </li>
                             <li>
-                                <a href=\"admin/progress-bar.html\">Progress Bars</a>
+                                <a href=\"";
+        // line 458
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admin/progress-bar.html"), "html", null, true);
+        echo "\">Progress Bars</a>
                             </li>
                             <li>
-                                <a href=\"admin/modal.html\">Modals</a>
+                                <a href=\"";
+        // line 461
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admin/modal.html"), "html", null, true);
+        echo "\">Modals</a>
                             </li>
                             <li>
-                                <a href=\"admin/switch.html\">Switchs</a>
+                                <a href=\"";
+        // line 464
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admin/switch.html"), "html", null, true);
+        echo "\">Switchs</a>
                             </li>
                             <li>
-                                <a href=\"admin/grid.html\">Grids</a>
+                                <a href=\"";
+        // line 467
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admin/grid.html"), "html", null, true);
+        echo "\">Grids</a>
                             </li>
                             <li>
-                                <a href=\"admin/fontawesome.html\">Fontawesome Icon</a>
+                                <a href=\"";
+        // line 470
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admin/fontawesome.html"), "html", null, true);
+        echo "\">Fontawesome Icon</a>
                             </li>
                             <li>
                                 <a href=\"";
@@ -914,7 +992,7 @@ class __TwigTemplate_91d1451f95013abc1962b923327aa792 extends Template
 
     public function getDebugInfo()
     {
-        return array (  888 => 483,  868 => 473,  800 => 408,  765 => 375,  755 => 374,  745 => 373,  735 => 372,  605 => 252,  580 => 230,  567 => 220,  543 => 198,  533 => 197,  513 => 186,  507 => 183,  501 => 180,  495 => 177,  489 => 174,  483 => 171,  477 => 168,  471 => 165,  465 => 162,  459 => 159,  453 => 156,  441 => 147,  435 => 144,  429 => 141,  418 => 133,  411 => 129,  404 => 125,  397 => 121,  390 => 117,  382 => 112,  376 => 109,  370 => 106,  364 => 103,  343 => 85,  339 => 84,  332 => 79,  322 => 78,  310 => 68,  303 => 64,  299 => 63,  295 => 62,  291 => 61,  286 => 59,  282 => 58,  277 => 56,  273 => 55,  269 => 54,  264 => 52,  259 => 50,  255 => 49,  250 => 47,  246 => 45,  236 => 44,  224 => 41,  218 => 38,  214 => 37,  210 => 36,  206 => 35,  202 => 34,  198 => 33,  193 => 31,  189 => 30,  183 => 27,  177 => 24,  173 => 23,  169 => 22,  165 => 21,  152 => 10,  142 => 9,  123 => 5,  111 => 485,  109 => 483,  107 => 374,  105 => 372,  103 => 197,  100 => 196,  98 => 78,  95 => 77,  84 => 73,  80 => 72,  76 => 70,  74 => 44,  69 => 43,  67 => 9,  62 => 8,  57 => 5,  51 => 1,);
+        return array (  966 => 483,  946 => 473,  940 => 470,  934 => 467,  928 => 464,  922 => 461,  916 => 458,  910 => 455,  904 => 452,  898 => 449,  892 => 446,  886 => 443,  874 => 434,  868 => 431,  862 => 428,  851 => 420,  844 => 416,  837 => 412,  830 => 408,  823 => 404,  815 => 399,  809 => 396,  803 => 393,  797 => 390,  783 => 379,  777 => 375,  767 => 374,  757 => 373,  747 => 372,  699 => 334,  687 => 325,  629 => 270,  617 => 261,  605 => 252,  580 => 230,  567 => 220,  543 => 198,  533 => 197,  513 => 186,  507 => 183,  501 => 180,  495 => 177,  489 => 174,  483 => 171,  477 => 168,  471 => 165,  465 => 162,  459 => 159,  453 => 156,  441 => 147,  435 => 144,  429 => 141,  418 => 133,  411 => 129,  404 => 125,  397 => 121,  390 => 117,  382 => 112,  376 => 109,  370 => 106,  364 => 103,  343 => 85,  339 => 84,  332 => 79,  322 => 78,  310 => 68,  303 => 64,  299 => 63,  295 => 62,  291 => 61,  286 => 59,  282 => 58,  277 => 56,  273 => 55,  269 => 54,  264 => 52,  259 => 50,  255 => 49,  250 => 47,  246 => 45,  236 => 44,  224 => 41,  218 => 38,  214 => 37,  210 => 36,  206 => 35,  202 => 34,  198 => 33,  193 => 31,  189 => 30,  183 => 27,  177 => 24,  173 => 23,  169 => 22,  165 => 21,  152 => 10,  142 => 9,  123 => 5,  111 => 485,  109 => 483,  107 => 374,  105 => 372,  103 => 197,  100 => 196,  98 => 78,  95 => 77,  84 => 73,  80 => 72,  76 => 70,  74 => 44,  69 => 43,  67 => 9,  62 => 8,  57 => 5,  51 => 1,);
     }
 
     public function getSourceContext()
@@ -1179,7 +1257,7 @@ class __TwigTemplate_91d1451f95013abc1962b923327aa792 extends Template
                                     </div>
                                     <div class=\"email__item\">
                                         <div class=\"image img-cir img-40\">
-                                            <img src=\"admin/images/icon/avatar-05.jpg\" alt=\"Cynthia Harvey\" />
+                                            <img src=\"{{ asset('admin/images/icon/avatar-05.jpg') }}\" alt=\"Cynthia Harvey\" />
                                         </div>
                                         <div class=\"content\">
                                             <p>Meeting about new dashboard...</p>
@@ -1188,7 +1266,7 @@ class __TwigTemplate_91d1451f95013abc1962b923327aa792 extends Template
                                     </div>
                                     <div class=\"email__item\">
                                         <div class=\"image img-cir img-40\">
-                                            <img src=\"admin/images/icon/avatar-04.jpg\" alt=\"Cynthia Harvey\" />
+                                            <img src=\"{{ asset('admin/images/icon/avatar-04.jpg') }}\" alt=\"Cynthia Harvey\" />
                                         </div>
                                         <div class=\"content\">
                                             <p>Meeting about new dashboard...</p>
@@ -1243,7 +1321,7 @@ class __TwigTemplate_91d1451f95013abc1962b923327aa792 extends Template
                         <div class=\"account-wrap\">
                             <div class=\"account-item clearfix js-item-menu\">
                                 <div class=\"image\">
-                                    <img src=\"admin/images/icon/avatar-01.jpg\" alt=\"John Doe\" />
+                                    <img src=\"{{ asset('admin/images/icon/avatar-01.jpg')}}\" alt=\"John Doe\" />
                                 </div>
                                 <div class=\"content\">
                                     <a class=\"js-acc-btn\" href=\"#\">john doe</a>
@@ -1252,7 +1330,7 @@ class __TwigTemplate_91d1451f95013abc1962b923327aa792 extends Template
                                     <div class=\"info clearfix\">
                                         <div class=\"image\">
                                             <a href=\"#\">
-                                                <img src=\"admin/images/icon/avatar-01.jpg\" alt=\"John Doe\" />
+                                                <img src=\"{{ asset('admin/images/icon/avatar-01.jpg') }}\" alt=\"John Doe\" />
                                             </a>
                                         </div>
                                         <div class=\"content\">
@@ -1297,7 +1375,7 @@ class __TwigTemplate_91d1451f95013abc1962b923327aa792 extends Template
     <aside class=\"menu-sidebar d-none d-lg-block\">
         <div class=\"logo\">
             <a href=\"#\">
-                <img src=\"admin/images/icon/logo.png\" alt=\"Cool Admin\" />
+                <img src=\"{{ asset('admin/images/icon/logo.png') }}\" alt=\"Cool Admin\" />
             </a>
         </div>
         <div class=\"menu-sidebar__content js-scrollbar1\">
@@ -1308,21 +1386,21 @@ class __TwigTemplate_91d1451f95013abc1962b923327aa792 extends Template
                             <i class=\"fas fa-tachometer-alt\"></i>Dashboard</a>
                         <ul class=\"list-unstyled navbar__sub-list js-sub-list\">
                             <li>
-                                <a href=\"admin/index.html\">Dashboard 1</a>
+                                <a href=\"{{ asset('admin/index.html') }}\">Dashboard 1</a>
                             </li>
                             <li>
-                                <a href=\"admin/index2.html\">Dashboard 2</a>
+                                <a href=\"{{ asset('admin/index2.html') }}\">Dashboard 2</a>
                             </li>
                             <li>
-                                <a href=\"admin/index3.html\">Dashboard 3</a>
+                                <a href=\"{{ asset('admin/index3.html') }}\">Dashboard 3</a>
                             </li>
                             <li>
-                                <a href=\"admin/index4.html\">Dashboard 4</a>
+                                <a href=\"{{ asset('admin/index4.html') }}\">Dashboard 4</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href=\"admin/chart.html\">
+                        <a href=\"{{ asset('admin/chart.html') }}\">
                             <i class=\"fas fa-chart-bar\"></i>Charts</a>
                     </li>
                     <li>
@@ -1330,15 +1408,15 @@ class __TwigTemplate_91d1451f95013abc1962b923327aa792 extends Template
                             <i class=\"fas fa-table\"></i>Tables</a>
                     </li>
                     <li>
-                        <a href=\"admin/form.html\">
+                        <a href=\"{{ asset('admin/form.html') }}\">
                             <i class=\"far fa-check-square\"></i>Forms</a>
                     </li>
                     <li>
-                        <a href=\"admin/calendar.html\">
+                        <a href=\"{{ asset('admin/calendar.html') }}\">
                             <i class=\"fas fa-calendar-alt\"></i>Calendar</a>
                     </li>
                     <li>
-                        <a href=\"admin/map.html\">
+                        <a href=\"{{ asset('admin/map.html') }}\">
                             <i class=\"fas fa-map-marker-alt\"></i>Maps</a>
                     </li>
                     <li class=\"admin/has-sub\">
@@ -1346,13 +1424,13 @@ class __TwigTemplate_91d1451f95013abc1962b923327aa792 extends Template
                             <i class=\"fas fa-copy\"></i>Pages</a>
                         <ul class=\"list-unstyled navbar__sub-list js-sub-list\">
                             <li>
-                                <a href=\"admin/login.html\">Login</a>
+                                <a href=\"{{ asset('admin/login.html') }}\">Login</a>
                             </li>
                             <li>
-                                <a href=\"admin/register.html\">Register</a>
+                                <a href=\"{{ asset('admin/register.html') }}\">Register</a>
                             </li>
                             <li>
-                                <a href=\"admin/forget-pass.html\">Forget Password</a>
+                                <a href=\"{{ asset('admin/forget-pass.html') }}\">Forget Password</a>
                             </li>
                         </ul>
                     </li>
@@ -1361,34 +1439,34 @@ class __TwigTemplate_91d1451f95013abc1962b923327aa792 extends Template
                             <i class=\"fas fa-desktop\"></i>UI Elements</a>
                         <ul class=\"list-unstyled navbar__sub-list js-sub-list\">
                             <li>
-                                <a href=\"admin/button.html\">Button</a>
+                                <a href=\"{{ asset('admin/button.html') }}\">Button</a>
                             </li>
                             <li>
-                                <a href=\"admin/badge.html\">Badges</a>
+                                <a href=\"{{ asset('admin/badge.html') }}\">Badges</a>
                             </li>
                             <li>
-                                <a href=\"admin/tab.html\">Tabs</a>
+                                <a href=\"{{ asset('admin/tab.html') }}\">Tabs</a>
                             </li>
                             <li>
-                                <a href=\"admin/card.html\">Cards</a>
+                                <a href=\"{{ asset('admin/card.html') }}\">Cards</a>
                             </li>
                             <li>
-                                <a href=\"admin/alert.html\">Alerts</a>
+                                <a href=\"{{ asset('admin/alert.html') }}\">Alerts</a>
                             </li>
                             <li>
-                                <a href=\"admin/progress-bar.html\">Progress Bars</a>
+                                <a href=\"{{ asset('admin/progress-bar.html') }}\">Progress Bars</a>
                             </li>
                             <li>
-                                <a href=\"admin/modal.html\">Modals</a>
+                                <a href=\"{{ asset('admin/modal.html') }}\">Modals</a>
                             </li>
                             <li>
-                                <a href=\"admin/switch.html\">Switchs</a>
+                                <a href=\"{{ asset('admin/switch.html') }}\">Switchs</a>
                             </li>
                             <li>
-                                <a href=\"admin/grid.html\">Grids</a>
+                                <a href=\"{{ asset('admin/grid.html') }}\">Grids</a>
                             </li>
                             <li>
-                                <a href=\"admin/fontawesome.html\">Fontawesome Icon</a>
+                                <a href=\"{{ asset('admin/fontawesome.html') }}\">Fontawesome Icon</a>
                             </li>
                             <li>
                                 <a href=\"{{ asset('admin/typo.html') }}\">Typography</a>

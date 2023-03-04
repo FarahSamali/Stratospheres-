@@ -40,6 +40,7 @@ class NotificationsController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $notification->setTimestamp(new\DateTime('now'));
             $notificationsRepository->save($notification, true);
 
             return $this->redirectToRoute('app_notifications_index', [], Response::HTTP_SEE_OTHER);
